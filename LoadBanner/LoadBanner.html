@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+</head>
+<body>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>	
+<script src="banners.js"> </script>
+<script>
+	/*var SiteMap = function(options) {
+		this.clickedBanner = undefined;
+	        var default_args = {
+	                'id': "sitemap",
+        	        'background': "#F9F9F9",
+	                'fillStyle':  "rgba(0,0,0,0.25)",
+        	        'showdots':        true,
+        	        'showgrid': true,
+        	        'showlabels': true,        	                
+        	}
+		for(var index in default_args) {
+                	if(typeof options[index] == "undefined")
+                	        options[index] = default_args[index];
+        	}
+		this.clickedColor="#e1f";
+		this.unClickedColor="";
+	
+		this.drawBanner = function (ctx, b) {
+			ctx.beginPath();
+			ctx.fillStyle = b.clicked ? this.ClickedColor : this.unClickedColor; 
+			ctx.fillRect(b.x,b.y, b.width, b.height );
+			ctx.fill();
+		}
+		
+	}*/
+	var VoidBanner = {
+		"name": "Kitten spawner.",
+		"url" : "",
+		"img" : "http://31.media.tumblr.com/e288407bddb932b223e8859df4a5db35/tumblr_mfwig8OrJb1s11cz1o1_400.gif",
+		"imgType" : "url",
+	}
+	var clickedBanner = VoidBanner;
+
+	var info = {
+			
+		};
+        function getMousePos(canvas, evt) {
+        	var rect = canvas.getBoundingClientRect();
+        	return {
+        		x: evt.clientX - rect.left,
+			y: evt.clientY - rect.top
+		};
+	}
+
+	function drawBanner(ctx, b) {
+
+		ctx.beginPath();
+		ctx.fillStyle = b.clicked ? info.colorClicked : info.color; 
+		ctx.fillRect(b.x,b.y, b.width, b.height );
+		ctx.fill();
+
+	}
+	function checkCollide(b, x, y) {
+		return (b.x < x && b.y < y && (b.width+b.x) > x && (b.height+b.y) > y);
+	}
+	function drawBanners(evt) {		
+		var cv = $(info.id).get(0);
+
+		var mp = evt ? getMousePos(cv, evt) : undefined;
+
+		if(cv.getContext('2d')) {
+			var ctx = cv.getContext('2d');
+			ctx.clearRect(0,0,info.w,info.h);
+			ctx.strokeRect(0,0,info.w,info.h);
+			var voidClick =true;
+			for (var b in banners) {
+				var banner = banners[b];
+				if(mp)
+					banner.clicked = checkCollide(banner, mp.x, mp.y);
+				
+				drawBanner(ctx, banner);
+			
+				if(banner.clicked) {
+					clickedBanner = banner;
+					updateRest(banner);
+					voidClick = false;
+				}
+			}
+			if(voidClick) {
+				clickedBanner = VoidBanner;
+				updateRest(VoidBanner);
+			}
+		}
+	}
+	function updateRest(b) {
+		$("#input-url").val(b.url);
+		$("#select-upload-type option").each(function(index){
+			if($(this).val() == b.imgType) {
+				$(this).attr("selected", "selected")
+			}else {
+				$(this).removeAttr("selected")
+			}
+		});
+		switch(b.imgType) {
+		case "script":
+			$("#curr-img").html(b.img);
+			$("#upload-image").html('<textarea id="input-img" >'+b.img+'</textarea>');
+			break;
+		case "upload":
+			
+			break;
+		default:
+		case "url":
+			$("#curr-img").html('<img src="'+b.img+'"/\>');
+
+			$("#upload-image").html('<input id="input-img" type="text" value='+b.img+'>');
+			break;
+		}
+
+
+		
+
+		$("#banner-name").text(b["name"]);
+	}
+	function registerSiteMap(id, w, h) {
+    		var cv = $(id);
+		info = {"id":id, "width":w,"height":h,"color" :"rgb(0,200,110)","colorClicked":'#e1f',}
+		cv.on('click', drawBanners);
+		drawBanners();
+	}
+	function apply_button() {
+		clickedBanner.url = $("#input-url").val();
+		clickedBanner.imgType =  $("#select-upload-type").val();
+		clickedBanner.img = $("#input-img").val();
+
+		updateRest(clickedBanner);
+		
+	}
+	
+	function selectUploadType() {
+		var ut = $("#select-upload-type").val();
+		console.log("selectUploadType");
+		switch(ut) {
+		case "script":
+			$("#upload-image").html('<textarea id="input-img" ></textarea>');
+			break;
+		case "upload":
+			$("#upload-image").html('<input id="input-img" type="file">');
+			break;
+		default:
+		case "url":
+			$("#upload-image").html('<input id="input-img" type="text">');
+			break;
+		}
+	}
+</script>
+<style>
+#change-banner {
+	border: 1px solid rgb(201, 201, 201);
+	float: left;
+	box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1) inset, 0px 1px 10px rgba(0, 0, 0, 0.1);
+	margin: 200px;
+
+}
+input, button, select,textarea{
+	border-width: 1px;
+	border-style: solid;
+	-moz-border-top-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	border-image: none;
+	border-color: rgb(192, 192, 192) rgb(217, 217, 217) rgb(217, 217, 217);
+}
+button {
+
+}
+
+td {
+		vertical-align: top;
+		
+}
+#input-url, #select-upload-type, #input-img, #apply{
+	width: 99%;
+}
+#site-map {
+	border: 1px solid rgb(201, 201, 201);
+	width: 300px;
+}
+#choosen-banner {
+	border: 1px solid rgb(201, 201, 201);
+
+}
+</style>
+<body>
+
+<div id="change-banner">
+	<table><tr><td>
+	<div id="site-map">
+		<canvas id="cv-site-map" width="300" height="500"></canvas>
+		<script>registerSiteMap("#cv-site-map", 300, 500);</script>
+	</div>
+	</td><td>
+	<div id="choosen-banner">
+	<table>
+		<tr><th colspan="2"><span id="banner-name"></div></th></td>
+
+		<tr><td colspan="2"><center><div id="curr-img"></div></center></tr></td>
+
+		<tr>
+			<td colspan = "2"><input id="input-url" type="text"></td>
+		</tr>
+		<tr>
+			<td>
+
+				<select id="select-upload-type"> 
+					<option value="url" selected="selected">url</option>
+					<option value="upload">upload</option>
+					<option value="script">script</option>
+				</select>
+				<script>
+				$("#select-upload-type").change(selectUploadType);
+				</script>
+			</td><td>
+				<div id="upload-image"><input id="input-img" type="text"></div>
+			</td>
+		</tr>
+	
+		<tr ><td colspan="2"><center><button id="apply" onclick="apply_button();">Apply</button></center></td></tr>
+	</table>
+	</div>
+	</tr><table>
+</div>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
