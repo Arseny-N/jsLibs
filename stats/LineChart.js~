@@ -4,7 +4,7 @@ var LineChart = function (data,options) {
         		        id		: "canvas",
 				axisOrigin 	: [50,50],
 				barHeight 	: 100,
-				barWidth 	: 950,
+				barWidth 	: 350,
 				barChartHeight  : 20,
         		        background	: "#F9F9F9",
         		        

@@ -93,6 +93,7 @@
 	function fillInData(info) {
 		$("#heading").html(info.label + " "+info.labelplus);
 		$("#line-info span").html(21);
+		
 			
 	}
 </script>

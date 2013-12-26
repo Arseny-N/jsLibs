@@ -2,12 +2,12 @@ var LineChart = function (data,options) {
 			
 			 var default_args = {
         		        id		: "canvas",
-				axisOrigin 	: [50,50],
+				axisOrigin 	: [10,10],
 				barHeight 	: 100,
 				barWidth 	: 350,
 				barChartHeight  : 20,
         		        background	: "#F9F9F9",
-        		        
+				key		: "stats",        		        
         		        textFromAxisDist: [90, 40],
 				scoreFromBarDist: 10,
 			
@@ -36,6 +36,7 @@ var LineChart = function (data,options) {
 		        this.id = options['id'];
 		        
 			this.data = data;
+			this.key = options['key'];
 			
 			this.axisOrigin = options['axisOrigin'];
 			this.barHeight = options['barHeight'];
@@ -89,7 +90,7 @@ var LineChart = function (data,options) {
 		
 			this.drawPoint = function (n, chart, elem) {
 				var f = n*(this.barWidth/this.numVals) + this.axisOrigin[0];
-				var pos = [f, elem.value == '1'?this.axisOrigin[1]+this.chartTabs : 
+				var pos = [f, elem.value=='1'?this.axisOrigin[1]+this.chartTabs : 
 					      elem.value=='0'?this.axisOrigin[1]+this.barHeight/2 : 
 							 this.axisOrigin[1]+this.barHeight-this.chartTabs];
 				chart.push(pos);
@@ -143,7 +144,13 @@ var LineChart = function (data,options) {
 				elem.chart.label.mouseenter(f_enter);	
 				elem.chart.label.mouseleave(f_leave);		
 				if(this.click)
-					elem.chart.label.click(this.click);				
+					elem.chart.label.click(this.click);
+					
+				elem.chart.hitPoint.remember(this.key,elem);
+				elem.chart.hitLine.remember(this.key,elem);
+				elem.chart.label.remember(this.key,elem);
+				
+				
 				
 				
 				
