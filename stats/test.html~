@@ -1,6 +1,7 @@
 <!doctype html>
-<html lang="en">
+<html >
 <head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 </head>
 <body>
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>	
@@ -54,57 +55,242 @@
 		var f2 = function(){
 			return Math.floor(Math.random() *100);
 		}
+		var f3 = function(){
+			return Math.floor(Math.random() *200);
+		}
 		
-
 		var dataLine = function() { return [
-			{'label': {'time': '23:45:26', 'date':'24.12.2013'} ,'value': (f)() },
-			{'label': {'time': '23:45:26', 'date':'24.12.2013'} ,'value': (f)() },
-			{'label': {'time': '23:45:26', 'date':'24.12.2013'} ,'value': (f)() },
-			{'label': {'time': '23:45:26', 'date':'24.12.2013'} ,'value': (f)() },
-			{'label': {'time': '23:45:26', 'date':'24.12.2013'} ,'value': (f)() },
-			{'label': {'time': '23:45:26', 'date':'24.12.2013'} ,'value': (f)() },
-			{'label': {'time': '23:45:26', 'date':'24.12.2013'} ,'value': (f)() },
-			{'label': {'time': '23:45:26', 'date':'24.12.2013'} ,'value': (f)() },
-			{'label': {'time': '23:45:26', 'date':'24.12.2013'} ,'value': (f)() },
-			{'label': {'time': '23:45:26', 'date':'24.12.2013'} ,'value': (f)() },
-			{'label': {'time': '23:45:26', 'date':'24.12.2013'} ,'value': (f)() },]; },
-		dataBar = [{'label': 'B1' ,'value': (f2)(), 'subVals': (dataLine)() },
-			{'label': 'B2' ,'value': (f2)(), 'subVals': (dataLine)()},
-			{'label': 'B3' ,'value': (f2)(),'subVals': (dataLine)() },
-			{'label': 'B4' ,'value': (f2)(),'subVals': (dataLine)() },
-			{'label': 'B5' ,'value': (f2)(),'subVals': (dataLine)() },
-			{'label': 'B6' ,'value': (f2)(),'subVals': (dataLine)() },
-			{'label': 'B7' ,'value': (f2)(),'subVals': (dataLine)() },
-			{'label': 'B8' ,'value': (f2)(),'subVals': (dataLine)() },];
-			
+			{'label': {'time': '23:45:26', 'date':'24.12.2013'} ,'value': (f)(),		
+		  	 'taskCode' : (f3)(), 'userAnswer':(f3)(), 'rightAnswer': (f3)()},
+			{'label': {'time': '23:45:26', 'date':'24.12.2013'} ,'value': (f)(),
+			 'taskCode' : (f3)(), 'userAnswer':(f3)(), 'rightAnswer': (f3)()},
+			{'label': {'time': '23:45:26', 'date':'24.12.2013'} ,'value': (f)(),
+			 'taskCode' : (f3)(), 'userAnswer':(f3)(), 'rightAnswer': (f3)()},
+			{'label': {'time': '23:45:26', 'date':'24.12.2013'} ,'value': (f)(),
+			 'taskCode' : (f3)(), 'userAnswer':(f3)(), 'rightAnswer': (f3)()},
+			{'label': {'time': '23:45:26', 'date':'24.12.2013'} ,'value': (f)(),
+			 'taskCode' : (f3)(), 'userAnswer':(f3)(), 'rightAnswer': (f3)()},
+			{'label': {'time': '23:45:26', 'date':'24.12.2013'} ,'value': (f)(),
+			 'taskCode' : (f3)(), 'userAnswer':(f3)(), 'rightAnswer': (f3)()},
+			{'label': {'time': '23:45:26', 'date':'24.12.2013'} ,'value': (f)(),
+			 'taskCode' : (f3)(), 'userAnswer':(f3)(), 'rightAnswer': (f3)()},
+			{'label': {'time': '23:45:26', 'date':'24.12.2013'} ,'value': (f)(),
+			 'taskCode' : (f3)(), 'userAnswer':(f3)(), 'rightAnswer': (f3)()},
+			{'label': {'time': '23:45:26', 'date':'24.12.2013'} ,'value': (f)(),
+			 'taskCode' : (f3)(), 'userAnswer':(f3)(), 'rightAnswer': (f3)()},
+			{'label': {'time': '23:45:26', 'date':'24.12.2013'} ,'value': (f)(),
+			 'taskCode' : (f3)(), 'userAnswer':(f3)(), 'rightAnswer': (f3)()},
+			{'label': {'time': '23:45:26', 'date':'24.12.2013'} ,'value': (f)(),
+			 'taskCode' : (f3)(), 'userAnswer':(f3)(), 'rightAnswer': (f3)()},]; };
 
-		 var B = new LineChart(dataLine, {id: 'line' }).draw();
+		var m,n,
+		dataEntry = {
+			
+			'labelplus':'Description of this...', 
+
+			'subVals': [ { 'label':{	'time': '23:45:26',
+							'date':'24.12.2013'
+						} ,
+					'value': (f)(),
+					'taskCode' : (f3)(),
+					'userAnswer':(f3)(), 
+					'rightAnswer': (f3)()
+				   }], 
+			'numSuccSolvedTasks' : 90,
+			'numSolvedTasks' : 100,
+			'totalNumTasks':  (f3)(),
+			'numIgnTasks' : (f3)() ,
+			
+			
+			'label': 'B1' ,
+			'value': (f2)(), /* functions in json ?! */
+		};
+			
 		
+		var dataBar = [
+//			dataEntry,
+			{'label': 'B1' ,'labelplus':'Description of this...', 'value': (f2)(), 'subVals': (dataLine)() , 
+			 'numSuccSolvedTasks' : m = (f3)(),'numUnSuccSolvedTasks': n = (f3)(),'numSolvedTasks' : m+n,
+			 'totalNumTasks':  (f3)(),'numIgnTasks' : (f3)() },
+			 
+			{'label': 'B2' ,'labelplus':'Description of this...','value': (f2)(), 'subVals': (dataLine)(), 
+			 'numSuccSolvedTasks' : m = (f3)(),'numUnSuccSolvedTasks': n = (f3)(),'numSolvedTasks' : m+n,
+			 'totalNumTasks':  (f3)(),'numIgnTasks' : (f3)() },
+			 
+			{'label': 'B4' ,'labelplus':'Description of this...','value': (f2)(),'subVals': (dataLine)() ,
+			 'numSuccSolvedTasks' : m = (f3)(),'numUnSuccSolvedTasks': n = (f3)(),'numSolvedTasks' : m+n,
+			 'totalNumTasks':  (f3)(),'numIgnTasks' : (f3)() },
+ 			{'label': 'B5' ,'labelplus':'Description of this...','value': (f2)(),'subVals': (dataLine)(), 
+			 'numSuccSolvedTasks' : m = (f3)(),'numUnSuccSolvedTasks': n = (f3)(),'numSolvedTasks' : m+n,
+			 'totalNumTasks':  (f3)(),'numIgnTasks' : (f3)() },
+			 {'label': 'B6' ,'labelplus':'Description of this...','value': (f2)(),'subVals': (dataLine)() ,
+			 'numSuccSolvedTasks' : m = (f3)(),'numUnSuccSolvedTasks': n = (f3)(),'numSolvedTasks' : m+n,
+			 'totalNumTasks':  (f3)(),'numIgnTasks' : (f3)() },
+			 {'label': 'B7' ,'labelplus':'Description of this...','value': (f2)(),'subVals': (dataLine)() ,
+			 'numSuccSolvedTasks' : m = (f3)(),'numUnSuccSolvedTasks': n = (f3)(),'numSolvedTasks' : m+n,
+			 'totalNumTasks':  (f3)(),'numIgnTasks' : (f3)() },
+			 {'label': 'B8' ,'labelplus':'Description of this...','value': (f2)(),'subVals': (dataLine)() ,
+			 'numSuccSolvedTasks' : m = (f3)(),'numUnSuccSolvedTasks': n = (f3)(),'numSolvedTasks' : m+n,
+			 'totalNumTasks':  (f3)(),'numIgnTasks' : (f3)() },
+			 {'label': 'B9' ,'labelplus':'Description of this...','value': (f2)(),'subVals': (dataLine)() ,
+			 'numSuccSolvedTasks' : m = (f3)(),'numUnSuccSolvedTasks': n = (f3)(),'numSolvedTasks' : m+n,
+			 'totalNumTasks':  (f3)(),'numIgnTasks' : (f3)() },
+			 {'label': 'B10' ,'labelplus':'Description of this...','value': (f2)(),'subVals': (dataLine)() ,
+			 'numSuccSolvedTasks' : m = (f3)(),'numUnSuccSolvedTasks': n = (f3)(),'numSolvedTasks' : m+n,
+			 'totalNumTasks':  (f3)(),'numIgnTasks' : (f3)() },
+			 {'label': 'B11' ,'labelplus':'Description of this...','value': (f2)(),'subVals': (dataLine)() ,
+			 'numSuccSolvedTasks' : m = (f3)(),'numUnSuccSolvedTasks': n = (f3)(),'numSolvedTasks' : m+n,
+			 'totalNumTasks':  (f3)(),'numIgnTasks' : (f3)() },
+			 {'label': 'B12' ,'labelplus':'Description of this...','value': (f2)(),'subVals': (dataLine)() ,
+			 'numSuccSolvedTasks' : m = (f3)(),'numUnSuccSolvedTasks': n = (f3)(),'numSolvedTasks' : m+n,
+			 'totalNumTasks':  (f3)(),'numIgnTasks' : (f3)() },
+			 {'label': 'B13' ,'labelplus':'Description of this...','value': (f2)(),'subVals': (dataLine)() ,
+			 'numSuccSolvedTasks' : m = (f3)(),'numUnSuccSolvedTasks': n = (f3)(),'numSolvedTasks' : m+n,
+			 'totalNumTasks':  (f3)(),'numIgnTasks' : (f3)() },
+			 {'label': 'B14' ,'labelplus':'Description of this...','value': (f2)(),'subVals': (dataLine)() ,
+			 'numSuccSolvedTasks' : m = (f3)(),'numUnSuccSolvedTasks': n = (f3)(),'numSolvedTasks' : m+n,
+			 'totalNumTasks':  (f3)(),'numIgnTasks' : (f3)() },
+			 {'label': 'B15' ,'labelplus':'Description of this...','value': (f2)(),'subVals': (dataLine)() ,
+			 'numSuccSolvedTasks' : m = (f3)(),'numUnSuccSolvedTasks': n = (f3)(),'numSolvedTasks' : m+n,
+			 'totalNumTasks':  (f3)(),'numIgnTasks' : (f3)() },
+			 {'label': 'B16' ,'labelplus':'Description of this...','value': (f2)(),'subVals': (dataLine)() ,
+			 'numSuccSolvedTasks' : m = (f3)(),'numUnSuccSolvedTasks': n = (f3)(),'numSolvedTasks' : m+n,
+			 'totalNumTasks':  (f3)(),'numIgnTasks' : (f3)() },
+			 {'label': 'C1' ,'labelplus':'Description of this...','value': (f2)(),'subVals': (dataLine)(), 
+			 'numSuccSolvedTasks' : m = (f3)(),'numUnSuccSolvedTasks': n = (f3)(),'numSolvedTasks' : m+n,
+			 'totalNumTasks':  (f3)(),'numIgnTasks' : (f3)() },
+			  {'label': 'C2' ,'labelplus':'Description of this...','value': (f2)(),'subVals': (dataLine)(), 
+			 'numSuccSolvedTasks' : m = (f3)(),'numUnSuccSolvedTasks': n = (f3)(),'numSolvedTasks' : m+n,
+			 'totalNumTasks':  (f3)(),'numIgnTasks' : (f3)() },
+			  {'label': 'C3' ,'labelplus':'Description of this...','value': (f2)(),'subVals': (dataLine)(), 
+			 'numSuccSolvedTasks' : m = (f3)(),'numUnSuccSolvedTasks': n = (f3)(),'numSolvedTasks' : m+n,
+			 'totalNumTasks':  (f3)(),'numIgnTasks' : (f3)() },
+			  {'label': 'C4' ,'labelplus':'Description of this...','value': (f2)(),'subVals': (dataLine)(), 
+			 'numSuccSolvedTasks' : m = (f3)(),'numUnSuccSolvedTasks': n = (f3)(),'numSolvedTasks' : m+n,
+			 'totalNumTasks':  (f3)(),'numIgnTasks' : (f3)() },
+			  {'label': 'C5' ,'labelplus':'Description of this...','value': (f2)(),'subVals': (dataLine)(), 
+			 'numSuccSolvedTasks' : m = (f3)(),'numUnSuccSolvedTasks': n = (f3)(),'numSolvedTasks' : m+n,
+			 'totalNumTasks':  (f3)(),'numIgnTasks' : (f3)() },
+			];
+		
+		
+		var showTaskInfo = function () {
+			var stats;
+			stats = this.remember('stats');
+			fillInTaskData(stats);			
+			$("#task-info").show();
+		}
 		
 		var showInfo = function () {
 			var stats;
-			console.dir(stats = this.remember('bar').subVals);
+			stats = this.remember('bar');
+			console.log("here");
 			$( "#line svg" ).remove();
-			var B = new LineChart(stats, {id: 'line' }).draw();
+			var B = new LineChart(stats.subVals, lineChartOptions).draw();
+			fillInData(stats);
 		};
-		var B2 = new BarChart(dataBar, {id: 'bars', click : {bar: showInfo} }).draw();
-	}	
+		
+		var lineChartOptions = {id: 'line',click : showTaskInfo, key:'stats', getValue: function (entry) { return entry.numSolved ? entry.numSuccSolved * 100 / entry.numSolved:0; }, };
+		var  barChartOptions = {id: 'bars',click : showInfo,     key:'bar' };
 
-	function fillInData(info) {
-		$("#heading").html(info.label + " "+info.labelplus);
-		$("#line-info span").html(21);
+	 	var B = new LineChart(dataLine, lineChartOptions).draw();
+		
+		var B2 = new BarChart(dataBar, barChartOptions).draw();
+		function fillInData(info) {
+			$("#heading").html(info.label + " "+info.labelplus);
+			$("#line-info span").html("21");
+			
+			$("#info span").eq(0).html(info.numSolvedTasks);		
+			$("#info span").eq(1).html(info.totalNumTasks);
+			$("#info span").eq(2).html(info.numSuccSolvedTasks);
+			$("#info span").eq(3).html(info.numUnSuccSolvedTasks);
+			$("#info span").eq(4).html(info.numIgnTasks);
+			$("#task-info").hide();
 		
 			
-	}
+		}
+		function fillInTaskData(info) {
+			$("#task-info span").eq(0).html(info.label.date +" в 	"+info.label.time);
+			$("#task-info span").eq(1).html(info.taskCode); // HREF ????
+			$("#task-info span").eq(2).html(info.userAnswer);
+			$("#task-info span").eq(3).html(info.rightAnswer);
+			$("#task-info span").eq(4).html(info.value == "0" ? "не решено" : 
+							info.value == "1" ? "решено" : "решено не верно");
+		}		
+		
+	}	
+
+	
 </script>
 <style>
+	input, button, select,textarea{
+		border-width: 1px;
+		border-style: solid;
+		-moz-border-top-colors: none;
+		-moz-border-right-colors: none;
+		-moz-border-bottom-colors: none;
+		-moz-border-left-colors: none;
+		border-image: none;
+		border-color: rgb(192, 192, 192) rgb(217, 217, 217) rgb(217, 217, 217);
+	}
+	
 	#stats td{
 		vertical-align: top;
 	}
-	#line {
+	body {
+		font: 12px/14px sans-serif;
+	}
+	#line svg{
+
+		margin: auto;
+		padding: auto;
+
+	}
+	#bars {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+	#task-info, #line-help {
+		display: none;
+	}
+	#more , #info, #line, #heading, #line-help {
 		
+		border-bottom: 1px solid rgb(201, 201, 201);	
+		margin: auto;
+		padding: auto;
+	}
+	#bars, #more , #task-info{
+		margin : 4px;
+		border: 1px solid rgb(201, 201, 201);	
+	}
+	#more {
+		width: 400px;
+	}
+	#heading ,#line-info{
+		text-align: center;
+	}
+	#line, #info, #heading, #line-info{
+		width: 100%;
+	}
 
-
+	#info table, #task-info table{
+		border-collapse: collapse;
+		margin: 20px;
+		width : 100%;
+	}
+	
+	/*#task-info, #info td,tr {
+		border-bottom :solid 1px rgb(201, 201, 201);
+	}*/
+ #info td {
+		width: 400px;
+	}
+	
+	#info {
+		padding: auto;
+		text-align: left;
+	 	border-collapse: collapse;
+	 	empty-cells: show;
 	}
 </style>
 <body onload="draw();">
@@ -112,20 +298,54 @@
 	<table>
 		<tr><td><div id="bars"></div></td> 
 		<td>
-			<div id="heading"></div>
-			<div id="line-info">Последние <span>20</span> решенные.Нажмите чтобы вывести инфомацию о задании.</div>
-			<div id="line"></div>
-			<table>
-				<tr><td>Решено всего			</td><td><span></span></td></tr>
-				<tr><td>Количество заданий в банке	</td><td><span></span></td></tr>
-				<tr><td>Решено верно			</td><td><span></span></td></tr>
-				<tr><td>Решено не верно			</td><td><span></span></td></tr>
-				<tr><td>Пропущено			</td><td><span></span></td></tr>
-			</table>				
-
-				
+			<div id="more">
+				<div id="heading"></div>
+				<div id="line-help">Последние <span>20</span> решенные.Нажмите чтобы вывести инфомацию о задании.</div>
+				<div id="line"></div>
+				<div id="info">
+					<table>
+						<tr><td>Решено всего			</td><td><span></span></td></tr>
+						<tr><td>Количество заданий в банке	</td><td><span></span></td></tr>
+						<tr><td>Решено верно			</td><td><span></span></td></tr>
+						<tr><td>Решено не верно			</td><td><span></span></td></tr>
+						<tr><td>Пропущено			</td><td><span></span></td></tr>
+					</table>				
+				</div>
+			</div>
+			<div id="task-info">
+					<table>
+						<tr><td>Задание решено 			</td><td><span></span></td></tr>
+						<tr><td>Код задания			</td><td><span></span></td></tr>
+						<tr><td>Ваш ответ			</td><td><span></span></td></tr>
+						<tr><td>Верный ответ			</td><td><span></span></td></tr>
+						<tr><td>Статус				</td><td><span></span></td></tr>
+					</table>				
+			</div>
 		</td></tr>
 	</table>
+	<code>
+		{<br>
+			
+			'labelplus':'Description of this...', <br>
+
+			'subVals': [ { 'label':{	'time': '23:45:26',
+							'date':'24.12.2013'
+						} ,<br>
+					'value': (f)(),<br>
+					'taskCode' : (f3)(),<br>
+					'userAnswer':(f3)(), <br>
+					'rightAnswer': (f3)()<br>
+				   }], <br>
+			'numSuccSolvedTasks' : 90,<br>
+			'numSolvedTasks' : 100,<br>
+			'totalNumTasks':  (f3)(),<br>
+			'numIgnTasks' : (f3)() ,<br>
+			<br>
+			<br>
+			'label': 'B1' ,<br>
+			'value': (f2)(), /* functions in json ?! */<br>
+		};<br>
+	</code>
 
 </body>
 
