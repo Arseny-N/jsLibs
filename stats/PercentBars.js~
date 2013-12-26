@@ -2,7 +2,7 @@ var BarChart = function (data,options) {
 		
 		 var default_args = {
        		        id		: "canvas",
-			axisOrigin 	: [50,50],
+			axisOrigin 	: [30,30],
 			barHeight 	: 50,
 			barWidth 	: 300,
 			barChartHeight  : 20,
@@ -10,7 +10,7 @@ var BarChart = function (data,options) {
        		        
        		        textFromAxisDist: [30, 25],
 			scoreFromBarDist: 10,
-		
+			key		: 'bar',
 
 			font 		: { family:   'Helvetica', size:     14},
 			
@@ -29,14 +29,15 @@ var BarChart = function (data,options) {
        
 	        this.id = options['id'];
 	        
-			this.data = data;
+		this.data = data;
+		this.getValue = options['getValue'];
 		
 		this.axisOrigin = options['axisOrigin'];
 		this.barHeight = options['barHeight'];
 		this.barWidth = options['barWidth'];
 		this.barChartHeight = options['barChartHeight'];
 		this.click = options['click']
-			
+		console.dir(this.click);
 		this.textFromAxisDist = options['textFromAxisDist'];
 		this.scoreFromBarDist = options['scoreFromBarDist'];
 		
@@ -45,6 +46,7 @@ var BarChart = function (data,options) {
 		this.greenFill = options['greenFill'];
 		this.redFill = options['redFill'];
 	
+		this.key = options['key'];
 		this.barStroke = options['barStroke'];
 		this.gridStroke = options['gridStroke'];
 		this.borderStroke = options['borderStroke'];
@@ -74,8 +76,9 @@ var BarChart = function (data,options) {
 			bar.chart.green = this.svg.rect((bar.value/100)*(this.barWidth), this.barChartHeight);
 			bar.chart.green.fill(this.greenFill);//.data('bar', bar);
 
+			bar.value = this.getValue(bar);
 
-				
+
 			bar.chart.label = this.svg.text(bar.label).font(this.font);
 			bar.chart.valueString = this.svg.text(bar.value + '%').font(this.font);
 			bar.chart.border = this.svg.line(this.axisOrigin[0],
@@ -85,10 +88,7 @@ var BarChart = function (data,options) {
 								 
 				/* Addin extra functionability */
 				
-				
-//				bar.chart.red.on('click', this.onclick);
-//				bar.chart.green.on('click', this.onclick);
-				
+
 				/* Positioning */
 			bar.chart.masterHit.x(this.axisOrigin[0]);				
 			bar.chart.green.x(this.axisOrigin[0]);
@@ -114,21 +114,24 @@ var BarChart = function (data,options) {
 			bar.chart.masterHit.mouseenter(f_enter);	
 			bar.chart.masterHit.mouseleave(f_leave);
 			if(this.click)		
-			        bar.chart.masterHit.click(this.click.bar);
+			        bar.chart.masterHit.click(this.click);
 					        	
 			bar.chart.red.mouseenter(f_enter);	
 			bar.chart.red.mouseleave(f_leave);
 			if(this.click)	
-			        bar.chart.red.click(this.click.bar);	
+			        bar.chart.red.click(this.click);	
 							        
 			bar.chart.green.mouseenter(f_enter);	
 			bar.chart.green.mouseleave(f_leave);	
 			if(this.click)	
-			        bar.chart.green.click(this.click.bar);					
-				 							       
-			bar.chart.masterHit.remember({'bar':bar});
-			bar.chart.red.remember({'bar':bar});
-			bar.chart.green.remember({'bar':bar});
+			        bar.chart.green.click(this.click);					
+			
+			
+			
+						       
+			bar.chart.masterHit.remember(this.key,bar);
+			bar.chart.red.remember(this.key,bar);
+			bar.chart.green.remember(this.key,bar);
 			
 			}
 			this.drawBars = function() {
