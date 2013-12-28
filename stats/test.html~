@@ -1,5 +1,9 @@
 <!doctype html>
 <html >
+<<<<<<< HEAD
+=======
+
+>>>>>>> gh-pages
 <head>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 </head>
@@ -172,7 +176,17 @@
 			 'numSuccSolvedTasks' : m = (f3)(),'numUnSuccSolvedTasks': n = (f3)(),'numSolvedTasks' : m+n,
 			 'totalNumTasks':  (f3)(),'numIgnTasks' : (f3)() },
 			];
+<<<<<<< HEAD
 		
+=======
+>>>>>>> gh-pages
+		
+		var showTaskInfo = function () {
+			var stats;
+			stats = this.remember('stats');
+			fillInTaskData(stats);			
+			$("#task-info").show();
+		}
 		
 		var showTaskInfo = function () {
 			var stats;
@@ -241,10 +255,62 @@
 		font: 12px/14px sans-serif;
 	}
 	#line svg{
+<<<<<<< HEAD
 
 		margin: auto;
 		padding: auto;
 
+	}
+	#bars {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+	#task-info, #line-help {
+		display: none;
+	}
+	#more , #info, #line, #heading, #line-help {
+		
+		border-bottom: 1px solid rgb(201, 201, 201);	
+		margin: auto;
+		padding: auto;
+	}
+	#bars, #more , #task-info{
+		margin : 4px;
+		border: 1px solid rgb(201, 201, 201);	
+	}
+	#more {
+		width: 400px;
+	}
+	#heading ,#line-info{
+		text-align: center;
+	}
+	#line, #info, #heading, #line-info{
+		width: 100%;
+	}
+=======
+
+		margin: auto;
+		padding: auto;
+>>>>>>> gh-pages
+
+	#info table, #task-info table{
+		border-collapse: collapse;
+		margin: 20px;
+		width : 100%;
+	}
+	
+	/*#task-info, #info td,tr {
+		border-bottom :solid 1px rgb(201, 201, 201);
+	}*/
+ #info td {
+		width: 400px;
+	}
+	
+	#info {
+		padding: auto;
+		text-align: left;
+	 	border-collapse: collapse;
+	 	empty-cells: show;
 	}
 	#bars {
 		padding-left: 40px;
