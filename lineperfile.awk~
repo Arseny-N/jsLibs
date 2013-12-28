@@ -1,0 +1,3 @@
+#!/bin/gawk -f
+BEGIN{B=0}
+{ print $0 >> B; B++;}

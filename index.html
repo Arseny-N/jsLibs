@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+
+	<title>JsLibs</title>
+
+	<!-- Behavioral Meta Data -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<!-- Styles -->
+	<style>
+		body {
+		  background: #111;
+		  margin: 0;
+		}
+		.frame {
+			background: #111;
+			margin: 0;
+			position: absolute;
+		}
+		.frame#top {	 
+			width: 600px;
+		  	height: 9px;
+			
+			top: 20px;
+			left: 00px 
+		}
+		.frame#bottom {
+
+			width: 600px;
+			height: 29px;	
+
+		  	top: 475px;
+			left: 0px; 
+			
+		}
+		.frame#left {
+				
+			width: 50px;
+			height: 500px;
+			top: 0px;
+			left: 20px 
+		}
+		.frame#right {
+			width: 90px;
+			height: 500px;
+			top: 0px;
+			left: 500px 
+		}		
+		.text {
+			background: #bbb;
+			position: absolute;
+			border: 9px solid #222;
+			border-radius: 2px;
+			font: 14px "Arial";
+			padding: 0 20px;
+		}
+		.text a{
+			color: #333;
+		}
+		.text ul {
+			list-style: none;
+		}
+		.text h5 {
+			text-align: center;
+			border-bottom: 0.5px double #555; 
+			width: 100%;
+		}
+		.text .comment {
+			background: #999;
+			border-left: 2px solid #222;
+			margin: 2px 0px 0px 0px;
+			padding: 3px;
+		}
+		.text#first {
+			
+			width: 400px;
+			height: 300px;
+			top: 29px;
+			left: 530px
+		}
+		.scene {
+			position: absolute;
+			top: 20px;
+			left: 50px;
+			
+			width: 500px;
+			height: 600px;
+			
+			margin: 0 auto;
+			padding: 0;
+		}
+		
+
+	</style>
+
+</head>
+<body>
+	<div id="container" class="container">
+		<ul id="scene" class="scene"
+
+
+		 data-limit-x="20"
+		 data-limit-y="1"
+		 data-scalar-x="8"
+		 data-scalar-y="8">
+			<li class="layer" data-depth="0.00"><img src="images/sky0.png"></li>
+			<li class="layer" data-depth="0.00"><img src="images/sky1.png"></li>
+			<li class="layer" data-depth="0.00"><img src="images/sky2.png"></li>
+			<li class="layer" data-depth="0.00"><img src="images/sky3.png"></li>
+			<li class="layer" data-depth="0.10"><img src="images/sky4.png"></li>
+			<li class="layer" data-depth="0.00"><img src="images/sky5.png"></li>
+			
+			<li class="layer" data-depth="0.20"><img src="images/tower.png"></li>
+
+
+			<li class="layer" data-depth="0.37"><img src="images/wood2.png"></li>
+			<li class="layer" data-depth="0.38"><img src="images/wood1.png"></li>
+			<li class="layer" data-depth="0.44"><img src="images/wood0.png"></li>
+			
+		</ul>
+	</div>
+
+	<!-- Scripts -->
+	<script src="parallax-master/deploy/parallax.js"></script>
+	<script>
+
+	// Pretty simple huh?
+	var scene = document.getElementById('scene');
+	var parallax = new Parallax(scene);
+
+	</script>
+	<div class="frame" id="top"> </div>
+	<div class="frame" id="bottom"> </div>
+	<div class="frame" id="left"> </div>
+	<div class="frame" id="right"> </div>
+	
+	
+	
+	<div class="text" id="first"> 
+		<h5>JsLib</h5>
+		<p>
+			<ul>
+				<li>
+				<a href="http://arseny-n.github.io/jsLibs/LoadBanner/LoadBanner.html">Load banner</a>
+				
+				</li>
+				<li>
+					<a href="http://arseny-n.github.io/jsLibs/stats/test.html">Statistics</a>
+					<p class="comment">
+						Всё интерактивно - можно кликать по полоске с процентами и выводить статистику по типу заданий,
+						кликать по точке на графике выводить информацию о определенном задании.
+					</p>
+				</li>
+			</ul>
+		</p>
+		<h5>This page</h5>
+		<p>
+			<ul>
+				<li><a href="https://github.com/wagerfield/parallax">Parallax</a></li>
+				<li><a href="http://www1.plurib.us/svg_gallery/">Artwork</a></li>
+			</ul>
+		</p>
+	</div>
+</body>
+</html>
