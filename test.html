@@ -350,7 +350,7 @@
 //			} );
 
 
-			$( ".group-list-entry" ).on( "click",  function(){log();});
+			$( ".group-list-entry" ).on( "click",  function(){$(this).find('.member-info').toggle('slow')});
 			
 		});
 			$(function(){
