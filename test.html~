@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+
+	<title>JsLibs</title>
+	<script src="jquery.js"></script>	
+	<script src="shadows/blinkingShadow.js"></script>
+	<script src="shadows/followShadow.js"></script>		
+	<script src="stellar-master/jquery.stellar.js"></script>
+	
+	<!-- Behavioral Meta Data -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
+	<script>
+	
+	$(function () {
+		var textBlink = new blinkingShadow({ element : $('#blinkShadows').eq(0), 
+					      	     property : 'text-shadow',
+				  		     colors : [  '#00fcff','#f00', ],	
+				  		     offsetX: {min:-4,max: 4, unit: 'px'}, 
+						     offsetY: {min:-4,max: 4, unit: 'px'}, 
+					 	     delay:   {min: 1,max: 2}, blur :'1px', 
+					 	     startBlink:false}).bind_mouse();
+		
+
+		
+		
+/*		;(function($, window) {
+		 	function Func(n) {
+		 		Func.prototype.N = n;
+				this.onMouseMove = this.onMouseMove.bind(this);
+		 	}
+		 	Func.prototype.f2 = function () {
+		 		console.log(this.N);
+		        	window.addEventListener('mousemove', this.onMouseMove);
+		 	}
+		 	Func.prototype.onMouseMove = function(event) {
+		 		console.log('N: '+this.N);
+				console.log('X: '+event.pageX);
+				console.log('Y: '+event.pageY);
+			};
+			window['Func'] = Func;
+		})(jQuery, window);*/
+		
+	//	var F = new Func(20);
+	//	F.f2();
+		new  followShadow( { 
+					element: $(".banner").eq(0),invertX: true, invertY: true, 
+					offX : {min:-0.01,max: 0.01, unit: 'px'},
+					offY : {min:-0.01,max: 0.01, unit: 'px'},
+					layers: [
+						{depth: 1, blur: '0px', color: '#999' },
+						{depth: 0.9, blur: '0px', color: '#999' },
+						{depth: 0.8, blur: '0px', color: '#999' },
+						{depth: 0.7, blur: '0px', color: '#999' },
+						{depth: 0.6, blur: '0px', color: '#999' },
+						{depth: 0.5, blur: '0px', color: '#999' },
+						{depth: 0.4, blur: '0px', color: '#999' },
+						{depth: 0.3, blur: '0px', color: '#999' },
+						{depth: 0.2, blur: '0px', color: '#999' },
+						{depth: 0.1, blur: '9px', color: '#999' },
+
+					]
+					
+					
+					}).enable();
+
+		new followShadow( { 
+					element: $(".banner").eq(1),invertX: true, invertY: true, 
+					offX : {min:-0.01,max: 0.01, unit: 'px'},
+					offY : {min:-0.01,max: 0.01, unit: 'px'},
+					layers: [
+						{depth: 1, blur: '0px', color: '#777' },
+						{depth: 0.9, blur: '0px', color: '#777' },
+						{depth: 0.8, blur: '0px', color: '#777' },
+						{depth: 0.7, blur: '0px', color: '#777' },
+						{depth: 0.6, blur: '0px', color: '#777' },
+						{depth: 0.5, blur: '0px', color: '#777' },
+						{depth: 0.4, blur: '0px', color: '#777' },
+						{depth: 0.3, blur: '0px', color: '#777' },
+						{depth: 0.2, blur: '0px', color: '#777' },
+						{depth: 0.1, blur: '4px', color: '#777' },
+
+					]
+					
+					
+					}).enable();
+
+		$.stellar();
+
+	});
+
+	</script>
+
+	<!-- Styles -->
+	<style>
+		body {
+		  background: #eee;
+		}
+		html, body {
+		    height: 100%;
+		}		
+		*{
+			  margin: 0px;
+			  padding: 0px;
+		}
+		.banner {
+			text-align: center;
+			color: #eee;
+			font-family: "Dax Regular",monospace;
+			font-size: 600%;
+			cursor:pointer;
+		}
+		.round{
+			border: 10px solid;
+			border-radius: 100%;
+			color: #e40;
+			margin: 0 auto; 
+			width:100px;
+			height:100px;
+		}
+		.round span {
+			color: #e40;
+			position: relative;
+			top: 15%;
+			left: 25%;	
+			font-size: 50px;
+		}
+		#the-band{
+			font-size: 20%;
+		}
+		#niceStripe {
+			position: relative;
+			top: 20%;
+			padding-bottom: 5%;padding-top: 5%;
+			background: #111;
+
+			opacity: 0.9;
+			width: 100%;
+			min-height: 20% !important;
+		}
+		
+		
+		
+		.slide {
+			/*background-attachment: fixed;*/
+
+			width:100%;
+
+			height: 100%;
+			
+			border-bottom: 4px solid;
+		}
+		.slide div {
+			min-height: 500%;
+		}
+		.slide#slide1 {
+			background-image: url("Hong_Kong2.jpg");
+			background-size: 100%;
+		}
+		.slide#slide2 {
+			background-image: url("back.jpg");
+
+			border-bottom: 1px solid;
+		}
+
+		
+		.navigation{
+			position:relative;
+			top:1%;
+		}	
+		.navigation li{
+		
+			color:#333333;
+			display:block;
+			padding: 0 10px;
+			
+			font-family: "Dax Regular",monospace;			
+			
+			margin-bottom:2px;
+			
+			font-weight:bold;
+			
+			border-bottom:2px solid black;
+			
+			text-align:left;
+			width:20%;
+			font-size:100%;
+		}
+		.navigation li:hover{
+			font-size:150%;
+	
+			cursor:pointer;
+
+		}
+		.button{
+			display:block;
+			width:50px;
+			height:50px;
+			position:absolute;
+			bottom:0px;
+			left:50%;
+			background-color:#333333;
+			background-image:url(arrow.png);
+		}	
+		.button:hover{
+			background-color:#494949;
+			cursor:pointer;
+		}
+		.menu-entry {
+
+			position: relative;
+			left: 30%;
+			padding: 0px;
+
+		}
+		#member-list {
+			min-height: 40%;		
+
+			width:  40%;
+		}		
+		#album-list {
+			display: none;
+			min-height: 40%;		
+
+			width:  40%;
+		}
+		
+		#album-list ul {
+			list-style-type: none;
+		}
+		.song-list {
+			padding-left: 40px;
+			border-left: 2px double;
+			border-bottom: 2px double;
+		}
+		#album-list ol {
+
+		}
+		
+		.album-list-entry {
+			padding: 0px;
+			margin: 0px;
+			height: 80%;
+		}
+		.album-art {
+			padding: 4px;
+			width: 100px;
+			height: 100px;
+			border: 2px double;
+		}
+		.album-art img {
+			width: 100px;
+			height: 100px;
+		}
+		.album-art img:hover {
+
+			width: 100px;
+			height: 100px;
+
+		}
+		.album-art:hover {
+			padding: 0px;
+
+		}
+		
+		.group-list-entry{ 
+			min-height: 20%; 
+		
+			margin: 0;			
+			width: 90%;
+			margin: 30px;
+			
+			cursor: pointer;
+			
+			background: #111;
+			color: #eee;
+
+			text-align: center;
+
+			border-radius: 2px;
+			box-shadow: 1px 5px 5px #000;
+		}
+		.member-info {
+			display: none;
+		}
+		.member-info ul{
+			list-style: none;
+			text-align: left;
+			margin-left: 20%;
+		}
+		.member-info img{
+			width: 20%;
+		}
+		
+		.member-instrument {
+	
+			font-family: "Dax Regular",monospace;			
+			font-size : 19px;
+			
+
+		}
+/*		.member-instrument:after {
+			 font-weight: bold;
+			 color: #555;
+			 content: "->";
+		}*/
+		
+		.member-name {
+			
+			font-family: "Dax Regular",monospace;			
+
+			font-size : 9px;
+		}
+
+	</style>
+
+</head>
+<body>
+
+	<div class="slide" id="slide1" data-slide="1" data-stellar-background-ratio="0.5">
+		<div id="niceStripe">
+			<p class="round" data-stellar-ratio="0.1"><span>霎</span></p>
+			<p class="banner" data-stellar-ratio="0.1">TODAY<span id="the-band">THE BAND</span></p>
+		</div>
+		<a class="button" data-slide="2" title=""></a>
+	</div>
+
+	<div class="slide" id="slide2" data-slide="2" data-stellar-background-ratio="0">
+		<a class="button" data-slide="3" title=""></a>
+	</div>
+	
+	<div class="slide" id="slide3" data-slide="3" data-stellar-background-ratio="0.5">
+		<ul class="navigation">
+			<li>group</li>
+			<li>music</li>		
+			<li>videos</li>
+		</ul>
+		
+		<script>
+		$(function(){
+///			console.dir($(".navigation li"));
+						console.dir($('.member-info'));
+			//.forEach(function(){ this.click(function () { console.dir(this) })});
+//			$('.member-info').each(function(){
+//				this.click(function(){console.log("Hello");}) 
+//			} );
+
+
+			$( ".group-list-entry" ).on( "click",  function(){log("Hello");});
+			
+		});
+			$(function(){
+				var list = $("#album-list").eq(0);
+				var json = {
+					'art': 'fedora-logo.png',
+					'title' : 'fedora-logo',
+					'onclick-redir' : 'fedoraproject.org',
+					
+					'meta' : {
+						'info' : 'fedora-logo!!',
+						'onhover-info': 'llooooogoooo!'
+					},
+
+					'song-list': [
+						{'name':'first-song', 'duration': '2:53', 
+							'onhover-description' : 'first-logo',
+							'onclick-redir' : 'lwn.net'
+							},
+						{'name':'second-song', 'duration': '2:53'},
+						{'name':'third-song', 'duration': '2:53'},
+						{'name':'fourth-song', 'duration': '2:53'},
+						{'name':'fith-song', 'duration': '2:53'},
+						{'name':'sixth-song', 'duration': '2:53'}
+					],
+					
+				};
+				function add(id) {
+					$(id);
+				}
+				function fill(entry, element) {
+					element.find(".album-art img").attr('src',entry.art);
+					element.find(".album-description")
+					
+				};
+//				fill(json,$(".album-list-entry"));
+				
+			});
+			
+		</script>
+		<div id="album-list" class="menu-entry"> 
+			<div class="album-list-entry">
+				<ul>
+					<li class="album-art"><img></li>
+					<li class="album-description"> <table><tr><td></td></tr></table></li>
+					<li class="song-list">
+						<ol>
+							<li>song</li>
+							<li>song</li>
+							<li>song</li>
+							<li>song</li>
+							<li>song</li>
+						</ol>	
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="member-list" class="menu-entry">
+			<table> <tr> <td>
+			<div class="group-list-entry">
+				<span class="member-instrument">Guitar</span>
+				<span class="member-name">Frack Dofak </span>
+				<span class="member-info"> 
+				<ul>
+					<li><img src="fedora-logo.png"> </li>
+					<li><a href="somewere">Vkontakte</a></li>
+				</ul>
+				</span>
+			</div>
+			<div class="group-list-entry">
+				<span class="member-instrument">Drums</span>
+				<span class="member-name">Frack Dofak </span>
+				<span class="member-info"> 
+				<ul>
+					<li><img src="fedora-logo.png"> </li>
+					<li><a href="somewere">Vkontakte</a></li>
+				</ul>
+				</span>
+			</div>
+			<div class="group-list-entry">
+				<span class="member-instrument">Piano</span>
+				<span class="member-name">Frack Dofak </span>
+				<span class="member-info"> 
+				<ul>
+					<li><img src="fedora-logo.png"> </li>
+					<li><a href="somewere">Vkontakte</a></li>
+				</ul>
+				</span>
+			</div>
+			<div class="group-list-entry">
+				<span class="member-instrument">Bass Guitar</span>
+				<span class="member-name">Frack Dofak </span>
+				<span class="member-info"> 
+				<ul>
+					<li><img src="fedora-logo.png"> </li>
+					<li><a href="somewere">Vkontakte</a></li>
+				</ul>
+				</span>
+			</div>
+			</td><td>
+			<div class="group-list-entry">
+				<span class="member-instrument">Vocal</span>
+				<span class="member-name">Frack Dofak </span>
+				<span class="member-info"> 
+				<ul>
+					<li><img src="fedora-logo.png"> </li>
+					<li><a href="somewere">Vkontakte</a></li>
+				</ul>
+				</span>
+			</div>
+			<div class="group-list-entry">
+				<span class="member-instrument">Second Guitar</span>
+				<span class="member-name">Frack Dofak </span>
+				<span class="member-info"> 
+				<ul>
+					<li><img src="fedora-logo.png"> </li>
+					<li><a href="somewere">Vkontakte</a></li>
+				</ul>
+				</span>
+			</div>
+			<div class="group-list-entry">
+				<span class="member-instrument">Lyrics</span>
+				<span class="member-name">Frack Dofak </span>
+				<span class="member-info"> 
+				<ul>
+					<li><img src="fedora-logo.png"> </li>
+					<li><a href="somewere">Vkontakte</a></li>
+				</ul>
+				</span>
+			</div>
+			<div class="group-list-entry">
+				<span class="member-instrument"></span>
+				<span class="member-name">Frack Dofak </span>
+				<span class="member-info"> 
+				<ul>
+					<li><img src="fedora-logo.png"> </li>
+					<li><a href="somewere">Vkontakte</a></li>
+				</ul>
+				</span>
+			</div>
+			</td></tr>
+			</table>
+	
+		</div>
+		
+	</div>
+
+	<!-- Scripts -->
+	<script src="parallax-master/deploy/parallax.js"></script>
+	<script>
+
+	// Pretty simple huh?
+//	var scene = document.getElementById('scene');
+//	var parallax = new Parallax(scene);
+//	var scene = document.getElementById('scene2');
+//	var parallax2 = new Parallax(scene);
+
+	</script>
+	</div>
+
+</body>
+</html>

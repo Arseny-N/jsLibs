@@ -51,6 +51,7 @@
 			left: 500px 
 		}		
 		.text {
+			display: collide;
 			background: #bbb;
 			position: absolute;
 			border: 9px solid #222;
@@ -105,6 +106,8 @@
 
 		 data-limit-x="20"
 		 data-limit-y="1"
+		  data-friction-x="1"
+		  data-friction-y="1"
 		 data-scalar-x="8"
 		 data-scalar-y="8">
 			<li class="layer" data-depth="0.00"><img src="images/sky0.png"></li>
