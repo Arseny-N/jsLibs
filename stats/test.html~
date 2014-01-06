@@ -6,46 +6,14 @@
 </head>
 <body>
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>	
-<script type="text/javascript" src="svg.js-master/dist/svg.js" charset="utf-8"></script>
-<script type="text/javascript" src="svg.js-master/src/helper.js"></script>
-<script type="text/javascript" src="svg.js-master/src/svg.js"></script>
-<script type="text/javascript" src="svg.js-master/src/container.js"></script>
-<script type="text/javascript" src="svg.js-master/src/element.js"></script>
-<script type="text/javascript" src="svg.js-master/src/memory.js"></script>
-<script type="text/javascript" src="svg.js-master/src/arrange.js"></script>
-<script type="text/javascript" src="svg.js-master/src/bbox.js"></script>
-<script type="text/javascript" src="svg.js-master/src/rect.js"></script>
-<script type="text/javascript" src="svg.js-master/src/ellipse.js"></script>
-<script type="text/javascript" src="svg.js-master/src/line.js"></script>
-<script type="text/javascript" src="svg.js-master/src/poly.js"></script>
-<script type="text/javascript" src="svg.js-master/src/polyline.js"></script>
-<script type="text/javascript" src="svg.js-master/src/polygon.js"></script>
-<script type="text/javascript" src="svg.js-master/src/path.js"></script>
-<script type="text/javascript" src="svg.js-master/src/image.js"></script>
-<script type="text/javascript" src="svg.js-master/src/text.js"></script>
-<script type="text/javascript" src="svg.js-master/src/textpath.js"></script>
-<script type="text/javascript" src="svg.js-master/src/doc.js"></script>
-<script type="text/javascript" src="svg.js-master/src/data.js"></script>
+<script type="text/javascript" src="http://arseny-n.github.io/jsLibs/stats/svg.js-master/dist/svg.js" charset="utf-8"></script>
 
-<script type="text/javascript" src="svg.js-master/src/group.js"></script>
-<script type="text/javascript" src="svg.js-master/src/set.js"></script>
-<script type="text/javascript" src="svg.js-master/src/gradient.js"></script>
-<script type="text/javascript" src="svg.js-master/src/use.js"></script>
-<script type="text/javascript" src="svg.js-master/src/mask.js"></script>
-<script type="text/javascript" src="svg.js-master/src/clip.js"></script>
-<script type="text/javascript" src="svg.js-master/src/color.js"></script>
-<script type="text/javascript" src="svg.js-master/src/number.js"></script>
-<script type="text/javascript" src="svg.js-master/src/array.js"></script>
-<script type="text/javascript" src="svg.js-master/src/sugar.js"></script>
-<script type="text/javascript" src="svg.filter.js-master/svg.filter.js"></script>
-<script type="text/javascript" src="PercentBars.js"></script>
-<script type="text/javascript" src="LineChart.js"></script>
-<!--[if lt IE 9]><script language="javascript" type="text/javascript" src="jqplot/excanvas.js"></script><![endif]-->
 
-<script language="javascript" type="text/javascript" src="jqplot/jquery.jqplot.min.js"></script>
 
-<link rel="stylesheet" type="text/css" href="jqplot/jquery.jqplot.css" />
+<script type="text/javascript" src="http://arseny-n.github.io/jsLibs/stats/PercentBars.js"></script>
+<script type="text/javascript" src="http://arseny-n.github.io/jsLibs/stats/LineChart.js"></script>
 
+<link rel="stylesheet" type="text/css" href="statStyle.css" />
 <script>
 	
 	function draw() {
@@ -231,127 +199,7 @@
 	
 </script>
 <style>
-	input, button, select,textarea{
-		border-width: 1px;
-		border-style: solid;
-		-moz-border-top-colors: none;
-		-moz-border-right-colors: none;
-		-moz-border-bottom-colors: none;
-		-moz-border-left-colors: none;
-		border-image: none;
-		border-color: rgb(192, 192, 192) rgb(217, 217, 217) rgb(217, 217, 217);
-	}
-	
-	#stats td{
-		vertical-align: top;
-	}
-	body {
-		font: 12px/14px sans-serif;
-	}
-	#line svg{
 
-
-		margin: auto;
-		padding: auto;
-
-	}
-	#bars {
-		padding-left: 40px;
-		padding-right: 40px;
-	}
-	#task-info, #line-help {
-		display: none;
-	}
-	#more , #info, #line, #heading, #line-help {
-		
-		border-bottom: 1px solid rgb(201, 201, 201);	
-		margin: auto;
-		padding: auto;
-	}
-	#bars, #more , #task-info{
-		margin : 4px;
-		border: 1px solid rgb(201, 201, 201);	
-	}
-	#more {
-		width: 400px;
-	}
-	#heading ,#line-info{
-		text-align: center;
-	}
-	#line, #info, #heading, #line-info{
-		width: 100%;
-	}
-
-
-		margin: auto;
-		padding: auto;
-
-
-	#info table, #task-info table{
-		border-collapse: collapse;
-		margin: 20px;
-		width : 100%;
-	}
-	
-	/*#task-info, #info td,tr {
-		border-bottom :solid 1px rgb(201, 201, 201);
-	}*/
- #info td {
-		width: 400px;
-	}
-	
-	#info {
-		padding: auto;
-		text-align: left;
-	 	border-collapse: collapse;
-	 	empty-cells: show;
-	}
-	#bars {
-		padding-left: 40px;
-		padding-right: 40px;
-	}
-	#task-info, #line-help {
-		display: none;
-	}
-	#more , #info, #line, #heading, #line-help {
-		
-		border-bottom: 1px solid rgb(201, 201, 201);	
-		margin: auto;
-		padding: auto;
-	}
-	#bars, #more , #task-info{
-		margin : 4px;
-		border: 1px solid rgb(201, 201, 201);	
-	}
-	#more {
-		width: 400px;
-	}
-	#heading ,#line-info{
-		text-align: center;
-	}
-	#line, #info, #heading, #line-info{
-		width: 100%;
-	}
-
-	#info table, #task-info table{
-		border-collapse: collapse;
-		margin: 20px;
-		width : 100%;
-	}
-	
-	/*#task-info, #info td,tr {
-		border-bottom :solid 1px rgb(201, 201, 201);
-	}*/
- #info td {
-		width: 400px;
-	}
-	
-	#info {
-		padding: auto;
-		text-align: left;
-	 	border-collapse: collapse;
-	 	empty-cells: show;
-	}
 </style>
 <body onload="draw();">
 <div id="stats">
