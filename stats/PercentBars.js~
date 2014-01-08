@@ -76,7 +76,7 @@ var BarChart = function (data,options) {
 			bar.chart.green = this.svg.rect((bar.value/100)*(this.barWidth), this.barChartHeight);
 			bar.chart.green.fill(this.greenFill);//.data('bar', bar);
 
-			bar.value = this.getValue(bar);
+		
 
 
 			bar.chart.label = this.svg.text(bar.label).font(this.font);
