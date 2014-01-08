@@ -124,4 +124,5 @@ function fuzzData () {
 			 'numSuccSolvedTasks' : m = (f3)(),'numUnSuccSolvedTasks': n = (f3)(),'numSolvedTasks' : m+n,
 			 'totalNumTasks':  (f3)(),'numIgnTasks' : (f3)() },
 			];
+			return this;
 };

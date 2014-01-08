@@ -13,7 +13,7 @@
 <script type="text/javascript" src="http://arseny-n.github.io/jsLibs/stats/PercentBars.js"></script>
 <script type="text/javascript" src="http://arseny-n.github.io/jsLibs/stats/LineChart.js"></script>
 <script type="text/javascript" src="http://arseny-n.github.io/jsLibs/stats/drawStats.js"></script>
-<script type="text/javascript" src="http://arseny-n.github.io/jsLibs/stats/drawStats.js"></script>
+<script type="text/javascript" src="http://arseny-n.github.io/jsLibs/stats/fuzzData.js"></script>
 
 
 <link rel="stylesheet" type="text/css" href="http://arseny-n.github.io/jsLibs/stats/statStyle.css" />
@@ -21,7 +21,7 @@
 	
 	function draw() {
 		drawStats({'dataLine': {},
-			   'dataBar': dataBar,
+			   'dataBar': fuzzData.dataBar,
 		
 			});
 	}	
