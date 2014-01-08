@@ -1,0 +1,120 @@
+	input, button, select,textarea{
+		border-width: 1px;
+		border-style: solid;
+		-moz-border-top-colors: none;
+		-moz-border-right-colors: none;
+		-moz-border-bottom-colors: none;
+		-moz-border-left-colors: none;
+		border-image: none;
+		border-color: rgb(192, 192, 192) rgb(217, 217, 217) rgb(217, 217, 217);
+	}
+	
+	#stats td{
+		vertical-align: top;
+	}
+	body {
+		font: 12px/14px sans-serif;
+	}
+	#line svg{
+
+
+		margin: auto;
+		padding: auto;
+
+	}
+	#bars {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+	#task-info, #line-help {
+		display: none;
+	}
+	#more , #info, #line, #heading, #line-help {
+		
+		border-bottom: 1px solid rgb(201, 201, 201);	
+		margin: auto;
+		padding: auto;
+	}
+	#bars, #more , #task-info{
+		margin : 4px;
+		border: 1px solid rgb(201, 201, 201);	
+	}
+	#more {
+		width: 400px;
+	}
+	#heading ,#line-info{
+		text-align: center;
+	}
+	#line, #info, #heading, #line-info{
+		width: 100%;
+	}
+
+
+		margin: auto;
+		padding: auto;
+
+
+	#info table, #task-info table{
+		border-collapse: collapse;
+		margin: 20px;
+		width : 100%;
+	}
+	
+
+	#info td {
+		width: 400px;
+	}
+	
+	#info {
+		padding: auto;
+		text-align: left;
+	 	border-collapse: collapse;
+	 	empty-cells: show;
+	}
+	#bars {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+	#task-info, #line-help {
+		display: none;
+	}
+	#more , #info, #line, #heading, #line-help {
+		
+		border-bottom: 1px solid rgb(201, 201, 201);	
+		margin: auto;
+		padding: auto;
+	}
+	#bars, #more , #task-info{
+		margin : 4px;
+		border: 1px solid rgb(201, 201, 201);	
+	}
+	#more {
+		width: 400px;
+	}
+	#heading ,#line-info{
+		text-align: center;
+	}
+	#line, #info, #heading, #line-info{
+		width: 100%;
+	}
+
+	#info table, #task-info table{
+		border-collapse: collapse;
+		margin: 20px;
+		width : 100%;
+	}
+	*/
+	/*#task-info, #info td,tr {
+		border-bottom :solid 1px rgb(201, 201, 201);
+	}*/
+	/*
+ #info td {
+		width: 400px;
+	}
+	
+	#info {
+		padding: auto;
+		text-align: left;
+	 	border-collapse: collapse;
+	 	empty-cells: show;
+	}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+
+	<title>2DΔy</title>
+	
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>	
+	<script type="text/javascript" src="js/svg.js-master/dist/svg.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/jquery.stellar.min.js"></script>
+	<script type="text/javascript" src="js/waypoints.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="js/blinkingShadow.js"></script>
+	<script type="text/javascript" src="js/followShadow.js"></script>
+	
+
+
+	
+
+	<script type="text/javascript" src="js/main.js"></script>
+	
+	
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+	<!-- Behavioral Meta Data -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+</head>
+<body>
+
+	<div class="slide" id="slide1" data-slide="1" data-stellar-background-ratio="0.5">
+		<div id="stripe">
+<!--			<p id="round" data-stellar-ratio="0.1"><span>霎</span></p>-->
+			<div id="logo"></div>
+			<div id="stripe-text" data-stellar-ratio="0.1">2DΔY<span id="the-band">BAND</span></div>
+		</div>
+		<a class="button" data-slide="2" title=""></a>
+	</div>
+
+	<div class="slide" id="slide2" data-slide="2" data-stellar-background-ratio="0">
+		<a class="button" data-slide="3" title=""></a>
+	</div>
+	
+	<div class="slide" id="slide3" data-slide="3" data-stellar-background-ratio="0.5">
+		<div class="navigation" >
+			<h1>Browse us:</h1>
+			<ul>
+				<li><a href="#">group</a></li>
+				<li><a href="#">misic</a></li>		
+	
+			</ul>
+		</div>
+		
+		<div id="album-list" class="menu-entry"> 
+			<div class="album-list-entry">
+				<ul>
+					<li class="album-art"><img></li>
+					<li class="album-description"> <table><tr><td></td></tr></table></li>
+					<li class="song-list">
+						<ol>
+							<li>song</li>
+							<li>song</li>
+							<li>song</li>
+							<li>song</li>
+							<li>song</li>
+						</ol>	
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="member-list" class="menu-entry">
+			<table> <tr> <td>
+			<div class="group-list-entry">
+				<span class="member-instrument">Guitar</span>
+				<span class="member-name">Frack Dofak </span>
+				<span class="member-info"> 
+				<ul>
+					<li><img src="fedora-logo.png"> </li>
+					<li><a href="somewere">Vkontakte</a></li>
+				</ul>
+				</span>
+			</div>
+			<div class="group-list-entry">
+				<span class="member-instrument">Drums</span>
+				<span class="member-name">Frack Dofak </span>
+				<span class="member-info"> 
+				<ul>
+					<li><img src="fedora-logo.png"> </li>
+					<li><a href="somewere">Vkontakte</a></li>
+				</ul>
+				</span>
+			</div>
+			<div class="group-list-entry">
+				<span class="member-instrument">Piano</span>
+				<span class="member-name">Frack Dofak </span>
+				<span class="member-info"> 
+				<ul>
+					<li><img src="fedora-logo.png"> </li>
+					<li><a href="somewere">Vkontakte</a></li>
+				</ul>
+				</span>
+			</div>
+			<div class="group-list-entry">
+				<span class="member-instrument">Bass Guitar</span>
+				<span class="member-name">Frack Dofak </span>
+				<span class="member-info"> 
+				<ul>
+					<li><img src="fedora-logo.png"> </li>
+					<li><a href="somewere">Vkontakte</a></li>
+				</ul>
+				</span>
+			</div>
+			</td><td>
+			<div class="group-list-entry">
+				<span class="member-instrument">Vocal</span>
+				<span class="member-name">Frack Dofak </span>
+				<span class="member-info"> 
+				<ul>
+					<li><img src="fedora-logo.png"> </li>
+					<li><a href="somewere">Vkontakte</a></li>
+				</ul>
+				</span>
+			</div>
+			<div class="group-list-entry">
+				<span class="member-instrument">Second Guitar</span>
+				<span class="member-name">Frack Dofak </span>
+				<span class="member-info"> 
+				<ul>
+					<li><img src="fedora-logo.png"> </li>
+					<li><a href="somewere">Vkontakte</a></li>
+				</ul>
+				</span>
+			</div>
+			<div class="group-list-entry">
+				<span class="member-instrument">Lyrics</span>
+				<span class="member-name">Frack Dofak </span>
+				<span class="member-info"> 
+				<ul>
+					<li><img src="fedora-logo.png"> </li>
+					<li><a href="somewere">Vkontakte</a></li>
+				</ul>
+				</span>
+			</div>
+			<div class="group-list-entry">
+				<span class="member-instrument"></span>
+				<span class="member-name">Frack Dofak </span>
+				<span class="member-info"> 
+				<ul>
+					<li><img src="fedora-logo.png"> </li>
+					<li><a href="somewere">Vkontakte</a></li>
+				</ul>
+				</span>
+			</div>
+			</td></tr>
+			</table>
+	
+		</div>
+		
+	</div>
+</body>
+</html>
