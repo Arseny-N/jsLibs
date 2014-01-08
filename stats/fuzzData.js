@@ -1,4 +1,4 @@
-
+var fuzzData =function() {
 		var f = function(){
 			return Math.floor(Math.random() *100)%3 -1;
 		}
@@ -59,7 +59,7 @@
 		};
 			
 		
-		var dataBar = [
+		this.dataBar = [
 //			dataEntry,
 			{'label': 'B1' ,'labelplus':'Description of this...', 'value': (f2)(), 'subVals': (dataLine)() , 
 			 'numSuccSolvedTasks' : m = (f3)(),'numUnSuccSolvedTasks': n = (f3)(),'numSolvedTasks' : m+n,
@@ -124,5 +124,5 @@
 			 'numSuccSolvedTasks' : m = (f3)(),'numUnSuccSolvedTasks': n = (f3)(),'numSolvedTasks' : m+n,
 			 'totalNumTasks':  (f3)(),'numIgnTasks' : (f3)() },
 			];
-
-
+			return this;
+};
