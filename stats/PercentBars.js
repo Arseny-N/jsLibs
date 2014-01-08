@@ -2,7 +2,7 @@ var BarChart = function (data,options) {
 		
 		 var default_args = {
        		        id		: "canvas",
-			axisOrigin 	: [25,30],
+			axisOrigin 	: [25,25],
 			barHeight 	: 50,
 			barWidth 	: 300,
 			barChartHeight  : 20,
