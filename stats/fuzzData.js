@@ -1,4 +1,4 @@
-var fuzzData = function () {
+
 		var f = function(){
 			return Math.floor(Math.random() *100)%3 -1;
 		}
@@ -124,5 +124,5 @@ var fuzzData = function () {
 			 'numSuccSolvedTasks' : m = (f3)(),'numUnSuccSolvedTasks': n = (f3)(),'numSolvedTasks' : m+n,
 			 'totalNumTasks':  (f3)(),'numIgnTasks' : (f3)() },
 			];
-			return this;
-};
+
+
