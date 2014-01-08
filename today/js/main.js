@@ -72,7 +72,7 @@ $(function () {
 		   colors: ['#f46',  '#1f6', '#16f', '#f92'],
 		   fill:color,
 		   stroke:color,
-		   text: '霎'
+		   text: '天'//'霎'
 	});	
 	
 	var links = $('.navigation').find('li')

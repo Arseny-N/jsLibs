@@ -107,5 +107,6 @@ $(function () {
         	goToByScroll(dataslide);
 
 	});
+	
 	$( ".group-list-entry" ).on( "click",  function(){$(this).find('.member-info').toggle('slow'	)});
 });
