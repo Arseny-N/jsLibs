@@ -59,7 +59,7 @@
 		};
 			
 		
-		this.dataBar = [
+		var dataBar = [
 //			dataEntry,
 			{'label': 'B1' ,'labelplus':'Description of this...', 'value': (f2)(), 'subVals': (dataLine)() , 
 			 'numSuccSolvedTasks' : m = (f3)(),'numUnSuccSolvedTasks': n = (f3)(),'numSolvedTasks' : m+n,
