@@ -19,7 +19,16 @@ function drawStats(options) {
 				$("#task-info span").eq(4).html(info.value == "0" ? "не решено" : 
 							info.value == "1" ? "решено" : "решено не верно");
 			}		
-			
+			function fillInVariants(variants) {
+				function fillInVariant(v) {
+					
+				}
+				
+				for(var index in variants.list) {
+					var v = variants.list[index];
+					fillInVariant(v);
+				}
+			}
 			var showTaskInfo = function () {
 				fillInTaskData(this.remember('stats'));			
 				$("#task-info").show();
@@ -46,4 +55,5 @@ function drawStats(options) {
 
 		 	var B = new LineChart(options.dataLine, lineChartOptions).draw();
 			var B2 = new BarChart(options.dataBar, barChartOptions).draw();
+			
 		}

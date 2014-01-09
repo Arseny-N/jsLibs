@@ -40,36 +40,51 @@ body {
 	width: 400px;
 }
 	
-#stats #info {
+#stats #info td{
 	text-align: left;
 	border-collapse: collapse;
 	empty-cells: show;
 }
-#stats #task-info,#stats #line-help {
+#stats #task-info{
 	display: none;
 }
-#stats #more,#stats #info,#stats #line,#stats #heading,#stats #line-help {
+#stats #more,#stats #info,#stats #line,#stats #heading{
 	border-bottom: 1px solid rgb(201, 201, 201);	
 	margin: auto;
 }
-#stats #bars,#stats #more,#stats #task-info{
+#variant table, #stats #bars,#stats #more,#stats #task-info{
 	margin : 4px;
 	border: 1px solid rgb(201, 201, 201);	
 }
-#stats #line,#stats #info,#stats #heading,#stats #line-info{
+#stats #line,#stats #info,#stats #heading{
 	width: 100%;
 	text-align: center;
 }
 #variant td {
 	text-align: center;
 }
+#variant tr {
+	border: 1px solid rgb(201, 201, 201);	
+}
+#variant td  {
+	padding-top: 6px;
+	opacity: 0.9;
+/*	box-shadow: 0px 1px 2px inset;*/
+}
+#variant td #draw-left-border {
+	border-left: 1px solid rgb(201, 201, 201);	
+}
 #variant td.red {
-	
+
+}
+#variant td.cross polygon{
+	fill: green;
+	stroke: green;
 }
 #variant td.green {
-	
+
 }
 #variant td.none {
-	
+
 }
 
