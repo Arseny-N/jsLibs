@@ -73,6 +73,7 @@ body {
 	opacity: 0.9;
 	border: 1px solid rgb(201, 201, 201);	
 	text-align: center;
+	min-width: 1.9em;
 /*	box-shadow: 0px 1px 2px inset;*/
 
 }
@@ -88,10 +89,10 @@ body {
 #variant td img {
 	width: 20px;
 }
-#variant td img:hover  {
+#variant td img.trash:hover  {
     box-shadow: 0.1px 0.1px 2px #f00;
 }
-#variant td img:active  {
+#variant td img.trash:active  {
     box-shadow: 0.1px 0.1px 2px #f00 inset;
 }
 
