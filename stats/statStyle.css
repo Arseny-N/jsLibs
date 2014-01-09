@@ -60,6 +60,10 @@ body {
 	width: 100%;
 	text-align: center;
 }
+#variant th {
+	background: none;
+	color: black;
+}
 #variant td {
 	text-align: center;
 }
