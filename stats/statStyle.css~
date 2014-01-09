@@ -77,7 +77,7 @@ body {
 /*	box-shadow: 0px 1px 2px inset;*/
 }
 #variant td img {
-	width: 40px;
+	width: 20px;
 }
 #variant td.draw-left-border {
 	border-left: 1px solid rgb(201, 201, 201);	
