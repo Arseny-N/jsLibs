@@ -65,9 +65,6 @@ body {
 	color: black;
 	border: 1px solid rgb(201, 201, 201);
 }
-#variant td {
-	text-align: center;
-}
 #variant tr {
 	border: 1px solid rgb(201, 201, 201);	
 }
@@ -75,6 +72,7 @@ body {
 	padding: 0px;
 	opacity: 0.9;
 	border: 1px solid rgb(201, 201, 201);	
+	text-align: center;
 /*	box-shadow: 0px 1px 2px inset;*/
 }
 #variant td img {
@@ -82,18 +80,5 @@ body {
 }
 #variant td.draw-left-border {
 	border-left: 1px solid rgb(201, 201, 201);	
-}
-#variant td.red {
-
-}
-#variant td.cross polygon{
-	fill: green;
-	stroke: green;
-}
-#variant td.green {
-
-}
-#variant td.none {
-
 }
 
