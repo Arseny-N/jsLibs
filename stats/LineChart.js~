@@ -2,20 +2,20 @@ var LineChart = function (data,options) {
 			
 			 var default_args = {
         		        id		: "canvas",
-				axisOrigin 	: [10,10],
+				axisOrigin 	: [20,10],
 				barHeight 	: 100,
 				barWidth 	: 350,
 				barChartHeight  : 20,
         		        background	: "#F9F9F9",
 				key		: "stats",        		        
-        		        textFromAxisDist: [90, 40],
+        		        textFromAxisDist: [10, 1960],
 				scoreFromBarDist: 10,
 			
 				pointSize 	: 10,
 				pointSizeInc 	: 15,
 				pointHitSize 	: 50,
 			
-				font 		: { family:   'Helvetica', size:     12},
+				font 		: { family:   'Helvetica',size: 12 },
 			//	ylabels		: ["text1","text2","text3"],
 
 				barStroke 	: {stroke: 'black', width:2,linejoin:"round",opacity: 0.7},
@@ -78,15 +78,10 @@ var LineChart = function (data,options) {
 			this.svg = options['svg'] ? options['svg'] : 
 				SVG(this.id).size(
 					options['Width' ]?options['Width' ]:
-					this.barWidth+this.axisOrigin[0]+80,
+					this.barWidth+this.axisOrigin[0]+140,
 		     			options['Height']?options['Height']:
 		     			this.barHeight+this.axisOrigin[1]+80);	
-		     	console.log(options['Width' ]?options['Width' ]:
-					this.barWidth+this.axisOrigin[0]+80,
-		     			options['Height']?options['Height']:
-		     			this.barHeight+
-		     				this.axisOrigin[1]+40);		
-	
+		     			
 		
 			this.drawPoint = function (n, chart, elem) {
 				var f = n*(this.barWidth/this.numVals) + this.axisOrigin[0];
@@ -113,8 +108,9 @@ var LineChart = function (data,options) {
 								add.tspan(elem.label.time+" ").newLine().dy(11);
 								add.tspan(elem.label.date).newLine().dy(10);
 								
-								}).move(f,this.axisOrigin[1]+this.barHeight)
-						.rotate(45,f, this.axisOrigin[1]+this.barHeight).font(this.font).opacity(0.6);
+								}).move(12+f,
+									this.axisOrigin[1]+this.barHeight+ this.textFromAxisDist[0])
+						.rotate(45,f, this.axisOrigin[1]+this.barHeight ).font(this.font).opacity(0.6);
 						
 //				elem.chart.textline = this.svg.line(f,this.barHeight + this.axisOrigin[0],f,this.barHeight + this.axisOrigin[0] + 90).fill('none').rotate(-45,f, this.axisOrigin[1]+this.barHeight ).stroke(this.yGridStroke);
 						

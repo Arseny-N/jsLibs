@@ -7,7 +7,6 @@ function drawStats(options) {
 				$("#info span").eq(1).html(info.totalNumTasks);
 				$("#info span").eq(2).html(info.numSuccSolvedTasks);
 				$("#info span").eq(3).html(info.numUnSuccSolvedTasks);
-				$("#info span").eq(4).html(info.numIgnTasks);
 				$("#task-info").hide();
 		
 			

@@ -1,120 +1,75 @@
-	input, button, select,textarea{
-		border-width: 1px;
-		border-style: solid;
-		-moz-border-top-colors: none;
-		-moz-border-right-colors: none;
-		-moz-border-bottom-colors: none;
-		-moz-border-left-colors: none;
-		border-image: none;
-		border-color: rgb(192, 192, 192) rgb(217, 217, 217) rgb(217, 217, 217);
-	}
+#stats td{
+	vertical-align: top;
+}
+body {
+	font: 12px/14px sans-serif;
+}
+#stats #line svg{
+	margin: auto;
+}
+#stats #bars {
+	padding-left: 40px;
+	padding-right: 40px	;
+}
+#stats #task-info, #stats #line-help {
+	display: none;
+}
+#stats #more,#stats #info,#stats #line,#stats #heading,#stats #line-help{
+	border-bottom: 1px solid rgb(201, 201, 201);	
+	margin: auto;
+}
+#stats #bars,#stats #more ,#stats #task-info {
+	margin : 4px;
+	border: 1px solid rgb(201, 201, 201);	
+}
+#stats #more {
+	width: 400px;
+}
+#stats #heading ,#stats #line-info{
+	text-align: center;
+}
+#stats #line,#stats #info,#stats #heading,#stats #line-info{
+	width: 100%;
+}
+#stats #info table,#stats #task-info table,#variant table{
+	border-collapse: collapse;
+	margin: 20px;
+	width : 100%;
+}	
+#stats #more, #stats #info td {
+	width: 400px;
+}
 	
-	#stats td{
-		vertical-align: top;
-	}
-	body {
-		font: 12px/14px sans-serif;
-	}
-	#line svg{
-
-
-		margin: auto;
-		padding: auto;
-
-	}
-	#bars {
-		padding-left: 40px;
-		padding-right: 40px;
-	}
-	#task-info, #line-help {
-		display: none;
-	}
-	#more , #info, #line, #heading, #line-help {
-		
-		border-bottom: 1px solid rgb(201, 201, 201);	
-		margin: auto;
-		padding: auto;
-	}
-	#bars, #more , #task-info{
-		margin : 4px;
-		border: 1px solid rgb(201, 201, 201);	
-	}
-	#more {
-		width: 400px;
-	}
-	#heading ,#line-info{
-		text-align: center;
-	}
-	#line, #info, #heading, #line-info{
-		width: 100%;
-	}
-
-
-		margin: auto;
-		padding: auto;
-
-
-	#info table, #task-info table{
-		border-collapse: collapse;
-		margin: 20px;
-		width : 100%;
-	}
+#stats #info {
+	text-align: left;
+	border-collapse: collapse;
+	empty-cells: show;
+}
+#stats #task-info,#stats #line-help {
+	display: none;
+}
+#stats #more,#stats #info,#stats #line,#stats #heading,#stats #line-help {
+	border-bottom: 1px solid rgb(201, 201, 201);	
+	margin: auto;
+}
+#stats #bars,#stats #more,#stats #task-info{
+	margin : 4px;
+	border: 1px solid rgb(201, 201, 201);	
+}
+#stats #line,#stats #info,#stats #heading,#stats #line-info{
+	width: 100%;
+	text-align: center;
+}
+#variant td {
+	text-align: center;
+}
+#variant td.red {
 	
-
-	#info td {
-		width: 400px;
-	}
+}
+#variant td.green {
 	
-	#info {
-		padding: auto;
-		text-align: left;
-	 	border-collapse: collapse;
-	 	empty-cells: show;
-	}
-	#bars {
-		padding-left: 40px;
-		padding-right: 40px;
-	}
-	#task-info, #line-help {
-		display: none;
-	}
-	#more , #info, #line, #heading, #line-help {
-		
-		border-bottom: 1px solid rgb(201, 201, 201);	
-		margin: auto;
-		padding: auto;
-	}
-	#bars, #more , #task-info{
-		margin : 4px;
-		border: 1px solid rgb(201, 201, 201);	
-	}
-	#more {
-		width: 400px;
-	}
-	#heading ,#line-info{
-		text-align: center;
-	}
-	#line, #info, #heading, #line-info{
-		width: 100%;
-	}
-
-	#info table, #task-info table{
-		border-collapse: collapse;
-		margin: 20px;
-		width : 100%;
-	}
-	*/
-	/*#task-info, #info td,tr {
-		border-bottom :solid 1px rgb(201, 201, 201);
-	}*/
-	/*
- #info td {
-		width: 400px;
-	}
+}
+#variant td.none {
 	
-	#info {
-		padding: auto;
-		text-align: left;
-	 	border-collapse: collapse;
-	 	empty-cells: show;
-	}
+}
+
