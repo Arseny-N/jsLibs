@@ -73,11 +73,29 @@ body {
 	opacity: 0.9;
 	border: 1px solid rgb(201, 201, 201);	
 	text-align: center;
+	min-width: 1.9em;
 /*	box-shadow: 0px 1px 2px inset;*/
+
 }
+/*
+#variant td:hover  {
+    box-shadow: 0.1px 0.1px 2px;
+}
+#variant td:active  {
+    box-shadow: 0.1px 0.1px 2px inset;
+}
+
+*/
 #variant td img {
 	width: 20px;
 }
+#variant td img:hover  {
+    box-shadow: 0.1px 0.1px 2px #f00;
+}
+#variant td img:active  {
+    box-shadow: 0.1px 0.1px 2px #f00 inset;
+}
+
 #variant td.draw-left-border {
 	border-left: 1px solid rgb(201, 201, 201);	
 }

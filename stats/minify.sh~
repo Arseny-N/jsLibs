@@ -1,0 +1,12 @@
+#!/bin/bash
+PREF_DIR=/home/arseni/Documents/web/jsLibs
+
+COMPRESSOR=$PREF_FIR/compressor/yuicompressor-x.y.z.jar
+
+function compress() {
+	file=`echo $1 | sed 's/.js//'`
+	echo "-jar  $CPMPRESSOR $file.js -o $file.min.js --charset utf-8"
+}
+for F in `ls *[^.min].js`;do
+	compress $F
+done
