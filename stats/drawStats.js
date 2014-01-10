@@ -54,6 +54,21 @@ function drawStats(options) {
 			
 
 		 	var B = new LineChart(options.dataLine, lineChartOptions).draw();
-			var B2 = new BarChart(options.dataBar, barChartOptions).draw();
-			
+		 	if(!options.vertical) {
+				var B2 = new BarChart(options.dataBar, barChartOptions).draw();
+				return;
+			}
+			if(options.vDataBarA) {
+				barChartOptions.id = 'barsA';
+				new BarChartVertical(options.vDataBarA, barChartOptions).draw();
+					
+			}
+			if(options.vDataBarB)	{
+				barChartOptions.id = 'barsB';
+				new BarChartVertical(options.vDataBarB, barChartOptions).draw();
+			}
+			if(options.vDataBarC)	{
+				barChartOptions.id = 'barsC';
+				new BarChartVertical(options.vDataBarC, barChartOptions).draw();
+			}
 		}

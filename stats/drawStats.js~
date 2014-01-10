@@ -19,7 +19,7 @@ function drawStats(options) {
 				$("#task-info span").eq(4).html(info.value == "0" ? "не решено" : 
 							info.value == "1" ? "решено" : "решено не верно");
 			}		
-			function fillInVariants(variants) {
+			/*function fillInVariants(variants) {
 				function fillInVariant(v) {
 					
 				}
@@ -28,7 +28,7 @@ function drawStats(options) {
 					var v = variants.list[index];
 					fillInVariant(v);
 				}
-			}
+			}*/
 			var showTaskInfo = function () {
 				fillInTaskData(this.remember('stats'));			
 				$("#task-info").show();
@@ -54,6 +54,21 @@ function drawStats(options) {
 			
 
 		 	var B = new LineChart(options.dataLine, lineChartOptions).draw();
-			var B2 = new BarChart(options.dataBar, barChartOptions).draw();
-			
+		 	if(!options.vertical) {
+				var B2 = new BarChart(options.dataBar, barChartOptions).draw();
+				return;
+			}
+			if(options.vDataBarA) {
+				barChartOptions.id = 'barsA';
+				new BarChartVertical(options.vDataBarA, barChartOptions).draw();
+					
+			}
+			if(options.vDataBarB)	{
+				barChartOptions.id = 'barsB';
+				new BarChartVertical(options.vDataBarA, barChartOptions).draw();
+			}
+			if(options.vDataBarC)	{
+				barChartOptions.id = 'barsC';
+				new BarChartVertical(options.vDataBarA, barChartOptions).draw();
+			}
 		}

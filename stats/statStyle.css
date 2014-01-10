@@ -4,6 +4,9 @@
 body {
 	font: 12px/14px sans-serif;
 }
+#stats #task-info {
+	width: 400px;
+}
 #stats #line svg{
 	margin: auto;
 }

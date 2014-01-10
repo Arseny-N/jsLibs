@@ -1,0 +1,60 @@
+body, html {
+    margin: 20px 0px;
+    padding: 0px;
+}
+.stripe {
+    position: relative;
+    width: 90%;
+    padding: 20px 20px;
+    vertical-align: middle;
+    box-shadow: 0px 2px 2px inset, 0px -2px 2px inset;
+    overflow: hidden;
+    border-radius: 0px 20px 20px 0px;
+}
+.stripe #logo {
+    width: 200px;
+    height: 110px;
+    background: #999;
+    float: left;
+}
+.stripe .subj-list td{
+    width: 120px;
+    height: auto;
+    display: block;
+
+}
+
+.stripe table {    border-spacing: 0px;}
+.stripe .subj-list .subj-list-entry { 
+	text-align: center;
+    vertical-align: middle;
+	text-decoration: none;
+	color: #111;
+    padding: 20px 0;
+	font-size: 11px;
+
+	margin: 0px;
+	float: left;
+	
+}
+.stripe .subj-list .subj-list-entry-last{
+    border-right: 0.5px solid rgb(201,201,201);
+}
+.stripe .subj-list:nth-of-type(1) .subj-list-entry {
+    border-top: 0.5px solid rgb(201,201,201);
+    border-left: 0.5px solid rgb(201,201,201);
+}
+
+.stripe .subj-list:nth-of-type(2) .subj-list-entry {
+    border-bottom: 0.5px solid rgb(201,201,201);
+    border-top: 0.5px solid rgb(201,201,201);
+    border-left: 0.5px solid rgb(201,201,201);
+}
+
+.stripe .subj-list-entry:hover  {
+    box-shadow: 0px 0.1px 2px;
+    font-weight: bold;
+}
+.stripe .subj-list-entry:active  {
+    box-shadow: 0.1px 0.1px 2px inset;
+}

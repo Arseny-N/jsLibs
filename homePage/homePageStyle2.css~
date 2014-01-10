@@ -1,0 +1,18 @@
+body, html {
+    margin 0px;
+    padding 0px;
+}
+.subj-list-entry{
+	text-align: center;
+	text-decoration: none;
+	color: #111;
+	border: 2px solid rgb(201,201,201);
+
+	float: left;
+}
+.subj-list-entry:hover  {
+    box-shadow: 0.1px 0.1px 2px;
+}
+.subj-list-entry:active  {
+    box-shadow: 0.1px 0.1px 2px inset;
+}
