@@ -17,7 +17,7 @@ var BarChartVertical = function (data,options) {
 			
 			greenFill 	: {color:'#42E73A', opacity: 0.8},
 			redFill 	: {color:'#f03', opacity: 0.6},
-			barStroke 	: {stroke: 'black', width:2,linejoin:"round",opacity: 0.7},
+			barStroke 	: {stroke: 'black', width:1.5,linejoin:"round",opacity: 0.7},
 			gridStroke	: {width: 1,opacity: 0.6,},
 			borderStroke	: {width: 1,dasharray: "5,5", opacity: 0.6},				
 			

@@ -4,7 +4,7 @@ var BarChartVertical = function (data,options) {
        		        id		: "canvas",
 			axisOrigin 	: [30,25],
 			barHeight 	: 100,
-			barWidth 	: 30,
+			barWidth 	: 32,
 			barChartHeight  : 20,
 			barChartWidth   : 15,
        		        background	: "#F9F9F9",
