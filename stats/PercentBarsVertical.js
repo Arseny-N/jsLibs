@@ -3,10 +3,10 @@ var BarChartVertical = function (data,options) {
 		 var default_args = {
        		        id		: "canvas",
 			axisOrigin 	: [30,25],
-			barHeight 	: 180,
-			barWidth 	: 50,
+			barHeight 	: 100,
+			barWidth 	: 30,
 			barChartHeight  : 20,
-			barChartWidth   : 20,
+			barChartWidth   : 15,
        		        background	: "#F9F9F9",
        		        
        		        textFromAxisDist: [30, 25],
@@ -17,7 +17,7 @@ var BarChartVertical = function (data,options) {
 			
 			greenFill 	: {color:'#42E73A', opacity: 0.8},
 			redFill 	: {color:'#f03', opacity: 0.6},
-			barStroke 	: {stroke: 'black', width:2,linejoin:"round",opacity: 0.7},
+			barStroke 	: {stroke: 'black', width:1.5,linejoin:"round",opacity: 0.7},
 			gridStroke	: {width: 1,opacity: 0.6,},
 			borderStroke	: {width: 1,dasharray: "5,5", opacity: 0.6},				
 			
@@ -90,10 +90,10 @@ var BarChartVertical = function (data,options) {
 				      this.barHeight+this.axisOrigin[1]).stroke(this.borderStroke);
 								 
 			
-			this.svg.polyline([ [cX-this.barChartHeight/2,this.axisOrigin[1]], 
-					    [cX-this.barChartHeight/2,this.axisOrigin[1]+this.barHeight],
-					    [cX+this.barChartHeight/2,this.axisOrigin[1]+this.barHeight],
-					    [cX+this.barChartHeight/2,this.axisOrigin[1]]] ).fill('none').stroke(this.barStroke);
+			this.svg.polyline([ [cX-this.barChartWidth/2,this.axisOrigin[1]], 
+					    [cX-this.barChartWidth/2,this.axisOrigin[1]+this.barHeight],
+					    [cX+this.barChartWidth/2,this.axisOrigin[1]+this.barHeight],
+					    [cX+this.barChartWidth/2,this.axisOrigin[1]]] ).fill('none').stroke(this.barStroke);
 				
 
 			
