@@ -53,7 +53,7 @@
 					
 				</div>
 			</div></center>				
-			<div id="task-info">
+			<center><div id="task-info">
 					<center>
 					<table>
 						<tr><td>Задание решено 			</td><td><span></span></td></tr>
@@ -63,7 +63,7 @@
 						<tr><td>Статус				</td><td><span></span></td></tr>
 					</table>				
 					</center>
-			</div>
+			</div></center>
 		</td></tr>
 		<tr><td><div id="barsA"></div></td></tr>
 		<tr><td><div id="barsB"></div></td></tr> 
@@ -181,6 +181,11 @@
 		</tr>
 		
 	<table>
+	<table >
+		<tr><td>a</td><td rowspan="3">a</td></tr>
+		<tr><td>a</td><td></td></tr>
+		<tr><td>a</td><td></td></tr>
+	</table>
 </div>
 </body>
 
