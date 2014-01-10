@@ -4,6 +4,12 @@
 body {
 	font: 12px/14px sans-serif;
 }
+#stats #task-info {
+	width: 400px;
+}
+.barContainer div{
+	text-align: center;
+}
 #stats #line svg{
 	margin: auto;
 }

@@ -7,6 +7,9 @@ body {
 #stats #task-info {
 	width: 400px;
 }
+.barContainer div{
+	text-align: center;
+}
 #stats #line svg{
 	margin: auto;
 }
