@@ -62,7 +62,7 @@ function drawStats(options) {
 				var bar = options.vDataBar[index];
 				if(bar.id == undefined)
 					bar.id="bar"+index;
-				
+				console.log('Drawing: '+bar.id);
 				barChartOptions.id = bar.id;
 				elem = $('#'+bar.id)
 				if(bar.append || elem.length == 0 ) {
