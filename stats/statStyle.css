@@ -7,6 +7,20 @@ body {
 #stats #task-info {
 	width: 400px;
 }
+* {
+	border-spacing: 0px;
+}
+.chartContainer {
+	border-left: 1px solid rgb(201, 201, 201);
+	border-right: 1px solid rgb(201, 201, 201);		
+
+}
+.chartContainerTop {
+	border-top: 1px solid rgb(201, 201, 201);
+}
+.chartContainerBottom {
+	border-top: 1px solid rgb(201, 201, 201);
+}
 .barContainer div{
 	/*text-align: center;*/
 }

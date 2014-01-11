@@ -58,17 +58,20 @@ function drawStats(options) {
 				var B2 = new BarChart(options.dataBar, barChartOptions).draw();
 				return;
 			}
-			if(options.vDataBarA) {
-				barChartOptions.id = 'barsA';
-				new BarChartVertical(options.vDataBarA, barChartOptions).draw();
+			for(var index in options.vDataBar) {
+				var bar = options.vDataBar[index];
+				if(bar.id == undefined)
+					bar.id="bar"+index;
+				barChartOptions.id = bar.id;
+				elem = $('#'+bar.id)
+				if(bar.append || elem.length == 0 ) {
 					
-			}
-			if(options.vDataBarB)	{
-				barChartOptions.id = 'barsB';
-				new BarChartVertical(options.vDataBarA, barChartOptions).draw();
-			}
-			if(options.vDataBarC)	{
-				barChartOptions.id = 'barsC';
-				new BarChartVertical(options.vDataBarA, barChartOptions).draw();
+					$(options.appendSelector).append(
+						'<tr><td class="'+bar.tdClass+'"><div id="'+bar.id+'"></div></td></tr>' );
+
+//					elem = $('#'+bar.id)
+				}
+
+				new BarChartVertical(bar.data, barChartOptions).draw();
 			}
 		}

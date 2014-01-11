@@ -22,10 +22,14 @@
 	
 	function draw() {
 		var dataBar = new fuzzData();
-		drawStats({'dataLine': {},			   
-			    'vDataBarA': dataBar.dataBarA,
-			    'vDataBarB': dataBar.dataBarB,
-			    'vDataBarC': dataBar.dataBarC,
+		drawStats({'dataLine': {},
+		'appendSelector':'#statsTable',
+		'dataBar':dataBar.dataBarA,
+		
+		'vDataBar':[{ 'data': dataBar.dataBarA,"id":'barsA','tdClass':'chartContainer chartContainerTop', },
+			    { 'data': dataBar.dataBarB,'id':'barsB','tdClass':'chartContainer'}, 
+			    { 'data': dataBar.dataBarC,'id':'barsC','tdClass':'chartContainer chartContainerBottom'},
+			    { 'data': dataBar.dataBarC,'id':'barsD','tdClass':'chartContainer chartContainerTop chartContainerBottom'}],
 			    vertical: true
 			});
 	}	
@@ -35,7 +39,7 @@
 
 <body onload="draw();">
 <div id="stats">
-	<table>
+	<table id="statsTable">
 		<tr><td>
 			<center><div id="more">
 				<div id="heading"></div>
@@ -65,9 +69,10 @@
 					</center>
 			</div></center>
 		</td></tr>
+
 		<tr><td><div id="barsA"></div></td></tr>
 		<tr><td><div id="barsB"></div></td></tr> 
-		<tr><td><div id="barsC"></div></td></tr>  
+
 				
 	</table>
 </div>
@@ -181,10 +186,10 @@
 		</tr>
 		
 	<table>
-	<table >
+	<table id="appendMe">
 		<tr><td>a</td><td rowspan="3">a</td></tr>
-		<tr><td>a</td><td></td></tr>
-		<tr><td>a</td><td></td></tr>
+		<tr><td>a</td></tr>
+		<tr><td>a</td></tr>
 	</table>
 </div>
 </body>
