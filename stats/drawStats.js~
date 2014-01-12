@@ -62,7 +62,7 @@ function drawStats(options) {
 				var bar = options.vDataBar[index];
 				if(bar.id == undefined)
 					bar.id="bar"+index;
-				console.log();
+				console.log('Drawing: '+bar.id);
 				barChartOptions.id = bar.id;
 				elem = $('#'+bar.id)
 				if(bar.append || elem.length == 0 ) {
@@ -71,7 +71,7 @@ function drawStats(options) {
 						'<tr><td class="'+bar.tdClass+'"><div id="'+bar.id+'"></div></td></tr>' );
 
 //					elem = $('#'+bar.id)
-				}
+
 
 				new BarChartVertical(bar.data, barChartOptions).draw();
 			}
