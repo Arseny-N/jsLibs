@@ -67,12 +67,15 @@ function drawStats(options) {
 				elem = $('#'+bar.id)
 				if(bar.append || elem.length == 0 ) {
 					var title = bar.title ? '<div class="chart-title" ><span>'+bar.title+
-								'</span><div class="chart-arrow-up"> </div></div>' : '';
+								'</span><div> </div></div>' : '';
 					
 					$(options.appendSelector).append('<tr><td class="'+bar.tdClass+
 									 '">'+title+'<div class="chart-body" id="'+bar.id+
 									 '"></div></td></tr>' );
+					
 					elem = $('#'+bar.id);
+					// class="chart-arrow-down"
+					elem.parents('.'+bar.tdClass).find('div.chart-title div').addClass("chart-arrow-up")
 					
 						
 				}
@@ -91,7 +94,7 @@ function drawStats(options) {
 				$(this).click(function() {
 					$(this).parents('.chartContainer').find(".chart-body").toggle('fast');
 					$(this).toggleClass(function(index, elemClass)
-						{console.log(elemClass);return elemClass == 'chart-arrow-up'? 'chart-arrow-down':'chart-arrow-up'});
+						{console.log(elemClass=="chart-arrow-up");return elemClass == 'chart-arrow-up'? 'chart-arrow-down':'chart-arrow-up'});
 					console.dir($(this).parents('.chartContainer').find(".chart-body"));
 				});
 			}
