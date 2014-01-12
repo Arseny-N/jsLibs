@@ -94,7 +94,7 @@ function drawStats(options) {
 				$(this).click(function() {
 					$(this).parents('.chartContainer').find(".chart-body").toggle('fast');
 					$(this).toggleClass(function(index, elemClass)
-						{console.log(elemClass=="chart-arrow-up");return elemClass == 'chart-arrow-down'? 'chart-arrow-down':'chart-arrow-up'});
+						{console.log(elemClass=="chart-arrow-up");return elemClass == 'chart-arrow-up'? 'chart-arrow-down':'chart-arrow-up'});
 					console.dir($(this).parents('.chartContainer').find(".chart-body"));
 				});
 			}
