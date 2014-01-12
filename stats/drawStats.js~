@@ -60,19 +60,41 @@ function drawStats(options) {
 			}
 			for(var index in options.vDataBar) {
 				var bar = options.vDataBar[index];
-				if(bar.id == undefined)
-					bar.id="bar"+index;
+				
+				
 				console.log('Drawing: '+bar.id);
-				barChartOptions.id = bar.id;
+				
 				elem = $('#'+bar.id)
 				if(bar.append || elem.length == 0 ) {
+					var title = bar.title ? '<div class="chart-title" ><span>'+bar.title+
+								'</span><div class="chart-arrow-'
+								+'up'+'"> </div></div>' : '';
 					
-					$(options.appendSelector).append(
-						'<tr><td class="'+bar.tdClass+'"><div id="'+bar.id+'"></div></td></tr>' );
+					$(options.appendSelector).append('<tr><td class="'+bar.tdClass+
+									 '">'+title+'<div class="chart-body" id="'+bar.id+
+									 '"></div></td></tr>' );
+					elem = $('#'+bar.id);
+					
+						
+				}
+				for(var dataIndex in bar.data) {
+					var barData = bar.data[dataIndex];
+					barChartOptions.id = bar.id +'-'+index+'-'+dataIndex;
+					elem.append('<div id='+barChartOptions.id+'></div>');
+//				
+					new BarChartVertical(barData, barChartOptions).draw();	
+				}
 
-//					elem = $('#'+bar.id)
-
-
-				new BarChartVertical(bar.data, barChartOptions).draw();
+				
 			}
+						
+		$(".chart-title div").each(function() {
+				$(this).click(function() {
+					$(this).parents('.chartContainer').find(".chart-body").toggle('fast');
+					$(this).toggleClass(function(index, elemClass)
+						{console.log(elemClass);return elemClass == 'chart-arrow-up'? 'chart-arrow-down':'chart-arrow-up'});
+					console.dir($(this).parents('.chartContainer').find(".chart-body"));
+				});
+			}
+		);
 		}

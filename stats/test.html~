@@ -26,14 +26,22 @@
 		'appendSelector':'#statsTable',
 		'dataBar':dataBar.dataBarA,
 		
-		'vDataBar':[{ 'data': dataBar.dataBarA,"id":'barsA','tdClass':'chartContainer chartContainerTop', },
-			    { 'data': dataBar.dataBarB,'id':'barsB','tdClass':'chartContainer'}, 
-			    { 'data': dataBar.dataBarC,'id':'barsC','tdClass':'chartContainer chartContainerBottom'},
-			    { 'data': dataBar.dataBarC,'id':'barsD','tdClass':'chartContainer chartContainerTop chartContainerBottom'}],
+		'vDataBar':[{ 'data': [dataBar.dataBarA],"id":'barsA',
+			      'title':'none','hidden':true,
+			      'tdClass':'chartContainer chartContainerTop', 
+			    },
+			    { 'data': [dataBar.dataBar(5),dataBar.dataBar(5)],'id':'barsB','title':'none','hidden':false,'tdClass':'chartContainer'}, 
+			    { 'data': [dataBar.dataBarC],'id':'barsC','title':'none','hidden':false,'tdClass':'chartContainer'},
+			    { 'data': [dataBar.dataBarC],'id':'barsD','title':'none','hidden':false,'tdClass':'chartContainer chartContainerBottom'}],
 			    vertical: true
 			});
+			
+		
+			}
+		);
 	}	
 
+	
 	
 </script>
 
@@ -70,124 +78,23 @@
 			</div></center>
 		</td></tr>
 
-		<tr><td><div id="barsA"></div></td></tr>
-		<tr><td><div id="barsB"></div></td></tr> 
+		<tr><td class="chartContainer chartContainerTop">
+			<div class="chart-title" >
+				<span>Blah Blah title</span> 			
+				<div class="chart-arrow-down"> </div>
+			</div>
+			<div class="chart-body" id="barsA"></div>
+		</td></tr>
 
 				
 	</table>
 </div>
 <div id="variant">
-	<table>
-		<tr><th> </th></tr>
-		
-		<tr>
-			<th>B1</th><th>B1</th><th>B1</th><th>B1</th><th>B1</th><th>B1</th>
-			<th>B1</th><th>B1</th><th>B1</th><th>B1</th><th>B1</th>	<th>B1</th>
-			<th>B1</th><th>B1</th><th>B1</th>
-			<th>B1</th>
-			<th>B1</th>
-			<th>B1</th>
-			<th>B1</th>
-			<th>B1</th>
-			<th>B1</th>
-			<th>B1</th>
-			<th>B1</th>
-			<th>B1</th>
-			<th>Первичный/ те­сто­вый балл</th>
-		</tr>
-		<tr>
-			<td>X</td>
-			<td>V</td>
-			<td>V</td>
-			<td>V</td>
-			<td>X</td>
-			<td>V</td>
-			<td>V</td>
-			<td>V</td>
-			<td>X</td>
-			<td>V</td>
-			<td>V</td>
-			<td>V</td>
-				<td class="red">
-					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" 
-							   xmlns:xlink="http://www.w3.org/1999/xlink" 
-							   x="0px" y="0px" width="20px" height="20px" viewBox="0 0 28 28" 
-							   style="enable-background:new 0 0 28 28;" xml:space="preserve">
-
-						<g class="cross">
-							<polygon fill="#DB0000" points="28,22.398 19.594,14 28,5.602 22.398,0 14,8.402 
-								 	 5.598,0 0,5.602 8.398,14 0,22.398 5.598,28 14,19.598 
-								 	 22.398,28"/>
-						</g>						
-					</svg>
-				</td>
-			<td class="green">
-					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" 
-							   xmlns:xlink="http://www.w3.org/1999/xlink" 
-							   x="0px" y="0px" width="20px" height="20px" viewBox="0 0 28 28" 
-							   style="enable-background:new 0 0 28 28;" xml:space="preserve">
-
-					
-						<g class="check">
-							<polygon  fill="#15D615" points="11.941,25.754 0,13.812 5.695,8.117 11.941,14.363 
-									  26.305,0 32,5.695 11.941,25.754"/>
-						</g>
-
-						
-					</svg>
-			</td>
-			<td class="none draw-left-border">
-					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" 
-							   xmlns:xlink="http://www.w3.org/1999/xlink" 
-							   x="0px" y="0px" width="20px" height="20px" viewBox="0 0 28 28" 
-							   style="enable-background:new 0 0 28 28;" xml:space="preserve">
-						<g class="minus">
-							<rect fill="#004DFF" width="32" height="8" y="6px"/>
-						</g>
-						
-					</svg>
-			</td>
-			<td><img src="check.gif"/></td>
-			<td>X</td>
-			<td>V</td>
-			<td>V</td>
-			<td>V</td>
-			<td>X</td>
-			<td>V</td>
-			<td>V</td>
-			<td>V</td>
-			<td>0/0</td>
-		</tr>
-		<tr>
-			<td>X</td>
-			<td>V</td>
-			<td>V</td>
-			<td>V</td>
-			<td>X</td>
-			<td>V</td>
-			<td>V</td>
-			<td>V</td>
-			<td>X</td>
-			<td>V</td>
-			<td>V</td>
-			<td>V</td>
-			<td>X</td>
-			<td>V</td>
-			<td>V</td>
-			<td>V</td>
-			<td>X</td>
-			<td>V</td>
-			<td>V</td>
-			<td>V</td>
-			<td>X</td>
-			<td>V</td>
-			<td>V</td>
-			<td>V</td>
-		</tr>
-		
-	<table>
+	
 	<table id="appendMe">
 		<tr><td>a</td><td rowspan="3">a</td></tr>
+		
+		<tr><td>a</td></tr>
 		<tr><td>a</td></tr>
 		<tr><td>a</td></tr>
 	</table>

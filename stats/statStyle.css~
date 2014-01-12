@@ -12,17 +12,47 @@ body {
 }
 .chartContainer {
 	border-left: 1px solid rgb(201, 201, 201);
-	border-right: 1px solid rgb(201, 201, 201);		
+	border-right: 1px solid rgb(201, 201, 201);	
+	padding: 0px;	
 
 }
 .chartContainerTop {
 	border-top: 1px solid rgb(201, 201, 201);
 }
 .chartContainerBottom {
-	border-ищеещь: 1px solid rgb(201, 201, 201);
+	border-bottom: 1px solid rgb(201, 201, 201);
 }
 .barContainer div{
 	/*text-align: center;*/
+}
+.chart-title {
+	border-bottom: 1px solid rgb(201, 201, 201);
+	width: 100%;
+
+	padding: 12px 0px;
+
+}
+
+.chart-title span {
+	margin-left: 14px;
+	font-size: 15px;
+}
+.chart-arrow-down,.chart-arrow-up {
+	width: 18px;
+	height:18px;
+	float:right;
+	margin-right: 14px;
+
+}
+.chart-arrow-down {
+	background: url(icons/arrow1_s.png) ;
+	background-size: 16px;
+	background-repeat: no-repeat	
+}
+.chart-arrow-up {
+	background: url(icons/arrow1_n.png);
+	background-size: 16px;
+	background-repeat: no-repeat	
 }
 #stats #line svg{
 	margin: auto;

@@ -58,7 +58,19 @@ var fuzzData =function() {
 			'value': (f2)(), /* functions in json ?! */
 		};
 			
-		
+		this.dataBar = function(num) {
+			var out = [];
+
+			
+			for(var i =0; i< num; i++) {
+				out.push ({'label': 'B'+i ,'labelplus':'Description of this...', 'value': (f2)(), 'subVals': (dataLine)() , 
+			 'numSuccSolvedTasks' : m = (f3)(),'numUnSuccSolvedTasks': n = (f3)(),'numSolvedTasks' : m+n,
+			 'totalNumTasks':  (f3)(),'numIgnTasks' : (f3)() }); 
+			 			
+			}
+						
+			return out;
+		}
 		this.dataBarA = [
 //			dataEntry,
 			{'label': 'B1' ,'labelplus':'Description of this...', 'value': (f2)(), 'subVals': (dataLine)() , 
