@@ -35,15 +35,24 @@ body {
 
 .chart-title span {
 	margin-left: 14px;
-	font-size: 15px;
+	font-size: 12px;
+	font-weight: bold;
 }
 .chart-arrow-down,.chart-arrow-up {
-	width: 16px;
-	height:16px;
+	width: 20px;
+	height:20px;
 	float:right;
 	margin-right: 14px;
 
 }
+.chart-arrow-down:hover,.chart-arrow-up:hover {
+	box-shadow: 0.1px 0.1px 2px #f00;
+}
+.chart-arrow-down:active,.chart-arrow-up::active {
+	box-shadow: 0.1px 0.1px 2px #f00 inset;
+}
+
+
 .chart-arrow-down {
 	background: url(icons/arrow1_s.png) ;
 	background-size: 16px;
