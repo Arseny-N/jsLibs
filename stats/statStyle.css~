@@ -46,21 +46,21 @@ body {
 
 }
 .chart-arrow-down:hover,.chart-arrow-up:hover {
-	box-shadow: 0.1px 0.1px 2px #f00;
+	box-shadow: 0.1px 0.1px 2px #00f;
 }
-.chart-arrow-down:active,.chart-arrow-up::active {
-	box-shadow: 0.1px 0.1px 2px #f00 inset;
+.chart-arrow-down:active,.chart-arrow-up:active {
+	box-shadow: 0.1px 0.1px 2px #00f inset;
 }
 
 
 .chart-arrow-down {
 	background: url(icons/arrow1_s.png) ;
-	background-size: 16px;
+	background-size: 100%;
 	background-repeat: no-repeat	
 }
 .chart-arrow-up {
 	background: url(icons/arrow1_n.png);
-	background-size: 16px;
+	background-size: 100%;
 	background-repeat: no-repeat	
 }
 #stats #line svg{
