@@ -44,6 +44,10 @@ body {
 	float:right;
 	margin-right: 14px;
 	border-radius: 2px;
+	position: relative;
+
+	left: 0px;
+	top: -9px;
 
 }
 .chart-arrow-down:hover,.chart-arrow-up:hover {

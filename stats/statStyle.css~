@@ -43,6 +43,7 @@ body {
 	height:20px;
 	float:right;
 	margin-right: 14px;
+	border-radius: 2px;
 
 }
 .chart-arrow-down:hover,.chart-arrow-up:hover {
