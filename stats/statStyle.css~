@@ -38,8 +38,8 @@ body {
 	font-size: 15px;
 }
 .chart-arrow-down,.chart-arrow-up {
-	width: 18px;
-	height:18px;
+	width: 16px;
+	height:16px;
 	float:right;
 	margin-right: 14px;
 

@@ -35,11 +35,12 @@ body {
 
 .chart-title span {
 	margin-left: 14px;
-	font-size: 15px;
+	font-size: 12px;
+	font-weight: bold;
 }
 .chart-arrow-down,.chart-arrow-up {
-	width: 18px;
-	height:18px;
+	width: 16px;
+	height:16px;
 	float:right;
 	margin-right: 14px;
 

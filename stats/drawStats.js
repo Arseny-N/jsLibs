@@ -67,8 +67,7 @@ function drawStats(options) {
 				elem = $('#'+bar.id)
 				if(bar.append || elem.length == 0 ) {
 					var title = bar.title ? '<div class="chart-title" ><span>'+bar.title+
-								'</span><div class="chart-arrow-'
-								+'up'+'"> </div></div>' : '';
+								'</span><div class="chart-arrow-up'"> </div></div>' : '';
 					
 					$(options.appendSelector).append('<tr><td class="'+bar.tdClass+
 									 '">'+title+'<div class="chart-body" id="'+bar.id+
