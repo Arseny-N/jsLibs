@@ -1,4 +1,10 @@
 function drawStats(options) {
+			function toggleHide() {
+				$(this).parents('.chartContainer').find(".chart-body").toggle('fast');
+				$(this).toggleClass(function(index, elemClass)
+		{console.log(elemClass=="chart-arrow-up");return elemClass == 'chart-arrow-up'? 'chart-arrow-down':'chart-arrow-up'});
+
+			}
 			function fillInData(info) {
 				$("#heading").html(info.label + " "+info.labelplus);
 				$("#line-info span").html("21");
@@ -58,6 +64,8 @@ function drawStats(options) {
 				var B2 = new BarChart(options.dataBar, barChartOptions).draw();
 				return;
 			}
+
+			
 			for(var index in options.vDataBar) {
 				var bar = options.vDataBar[index];
 				
@@ -87,16 +95,12 @@ function drawStats(options) {
 					new BarChartVertical(barData, barChartOptions).draw();	
 				}
 
-				
+				if(bar.hide) 
+					toggleHide.apply($('#'+bar.id).parents('.chartContainer').find('.chart-title div'));
 			}
 						
 			$(".chart-title div").each(function() {
-				$(this).click(function() {
-					$(this).parents('.chartContainer').find(".chart-body").toggle('fast');
-					$(this).toggleClass(function(index, elemClass)
-						{console.log(elemClass=="chart-arrow-up");return elemClass == 'chart-arrow-up'? 'chart-arrow-down':'chart-arrow-up'});
-					console.dir($(this).parents('.chartContainer').find(".chart-body"));
-				});
+				$(this).click(toggleHide);
 			}
 		);
 		}
