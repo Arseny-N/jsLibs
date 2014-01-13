@@ -11,7 +11,11 @@ body {
 	border-spacing: 0px;
 }
 .dropDownMenu {
-	
+	list-style: none;
+	padding: 0px;
+}
+.dropDownMenu .elem-hidden {
+	display: none;
 }
 .chartContainer {
 	border-left: 1px solid rgb(201, 201, 201);

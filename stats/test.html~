@@ -41,7 +41,7 @@
 			}).mouseleave(function(){
 				$(this).find(".elem-hidden").hide('fast');
 			});
-			$(this).find(".dropDownMenuHidden").hide();
+			$(this).find(".elem-hidden").hide();
 		});
 	}	
 
