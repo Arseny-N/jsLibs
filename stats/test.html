@@ -28,14 +28,21 @@
 		
 		'vDataBar':[{ 'data': [dataBar.dataBarA],"id":'barsA',
 			      'title':'none','hidden':true,
-			      'tdClass':'chartContainer chartContainerTop', 
+			      'tdClass':'chartContainerTop', 
 			    },
-			    { 'data': [dataBar.dataBar(5),dataBar.dataBar(5)],'id':'barsB','title':'none','hidden':false,'tdClass':'chartContainer'}, 
-			    { 'data': [dataBar.dataBarC],'id':'barsC','title':'none','hide':true,'tdClass':'chartContainer'},
-			    { 'data': [dataBar.dataBarC],'id':'barsD','title':'none','hide':true,'tdClass':'chartContainer chartContainerBottom'}],
+			    { 'data': [dataBar.dataBar(5),dataBar.dataBar(5)],'id':'barsB','title':'none','hidden':false}, 
+			    { 'data': [dataBar.dataBarC],'id':'barsC','title':'none','hide':true},
+			    { 'data': [dataBar.dataBarC],'id':'barsD','title':'none','hide':true,'tdClass':'chartContainerBottom'}],
 			    vertical: true
 			});
-
+		$(".dropDownMenu").each(function(index, element){
+			$(element).mouseenter(function(){
+				$(this).find(".elem-hidden").show('fast');
+			}).mouseleave(function(){
+				$(this).find(".elem-hidden").hide('fast');
+			});
+			$(this).find(".elem-hidden").hide();
+		});
 	}	
 
 	
@@ -43,6 +50,11 @@
 </script>
 
 <body onload="draw();">
+<ul class="dropDownMenu">
+	<li class="elem-visible"> have</li>
+	<li class="elem-hidden"> you ever</li>	
+	<li class="elem-hidden"> seen the rain</li>
+</ul>
 <div id="stats">
 	<table id="statsTable">
 		<tr><td>
@@ -95,7 +107,72 @@
 		<tr><td>a</td></tr>
 		<tr><td>a</td></tr>
 	</table>
+	<style>
+#navbar {
+	margin: 0;
+	padding: 0;
+	height: 1em; 
+}
+#navbar li {
+	list-style: none;
+	float: left; 
+}
+#navbar li a {
+	display: block;
+	padding: 3px 8px;
+	background-color: #5e8ce9;
+	color: #fff;
+	text-decoration: none; 
+}
+	
+#navbar li ul {
+	display: none; 
+	width: 10em; /* Width to help Opera out */
+	background-color: #69f;
+}
+	
+#navbar li:hover ul {
+	display: block;
+	position: absolute;
+	margin: 0;
+	padding: 0; 
+}
+#navbar li:hover li {
+	float: none; }
+#navbar li:hover li a {
+	background-color: #69f;
+	border-bottom: 1px solid #fff;
+	color: #000; }
+#navbar li li a:hover {
+	background-color: #8db3ff; }
+</style>
+	<div>
+		<a href="#">Contact</a>
+	<ul id="navbar">
+		<li><a href="#">Item One</a><ul>
+		<li><a href="#">Subitem One</a></li>
+		<li><a href="#">Second Subitem</a></li>
+		<li><a href="#">Numero Tres</a></li></ul>
+	</li>
+	<!-- ... and so on ... -->
+</ul>
+	</div>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 </body>
 
 

@@ -1,9 +1,16 @@
 function drawStats(options) {
 			function toggleHide() {
-				$(this).parents('.chartContainer').find(".chart-body").toggle('fast');
-				$(this).toggleClass(function(index, elemClass)
-		{console.log(elemClass=="chart-arrow-up");return elemClass == 'chart-arrow-up'? 'chart-arrow-down':'chart-arrow-up'});
-
+				var icon = $(this);
+				icon.parents('.chartContainer').find(".chart-body").toggle('fast');
+				//$(this).toggleClass(function(index, elemClass)
+//		{console.log(elemClass=="chart-arrow-up");return elemClass == 'chart-arrow-up'? 'chart-arrow-down':'chart-arrow-up'}, 1);
+				if(icon.hasClass("chart-arrow-up")) {
+					icon.removeClass("chart-arrow-up");
+					icon.addClass("chart-arrow-down");
+				} else {
+					icon.removeClass("chart-arrow-down");
+					icon.addClass("chart-arrow-up");
+				}
 			}
 			function fillInData(info) {
 				$("#heading").html(info.label + " "+info.labelplus);
@@ -65,7 +72,7 @@ function drawStats(options) {
 				return;
 			}
 
-			
+			var append_elem = $(options.appendSelector);
 			for(var index in options.vDataBar) {
 				var bar = options.vDataBar[index];
 				
@@ -75,15 +82,15 @@ function drawStats(options) {
 				elem = $('#'+bar.id)
 				if(bar.append || elem.length == 0 ) {
 					var title = bar.title ? '<div class="chart-title" ><span>'+bar.title+
-								'</span><div class="chart-arrow-down" > </div></div>' : '';
+								'</span><div class="chart-arrow" > </div></div>' : '';
 					
-					$(options.appendSelector).append('<tr><td class="'+bar.tdClass+
+					append_elem.append('<tr><td class="chartContainer '+bar.tdClass+
 									 '">'+title+'<div class="chart-body" id="'+bar.id+
 									 '"></div></td></tr>' );
 					
 					elem = $('#'+bar.id);
-					//
-					//elem.parents('.'+bar.tdClass).find('div.chart-title div').addClass("chart-arrow-up")
+					elem.parents('.chartContainer').find('.chart-arrow')
+						.addClass('chart-arrow-up');
 					
 						
 				}
@@ -96,7 +103,7 @@ function drawStats(options) {
 				}
 
 				if(bar.hide) 
-					toggleHide.apply($('#'+bar.id).parents('.chartContainer').find());
+					toggleHide.apply($('#'+bar.id).parents('.chartContainer').find('.chart-title div'));
 			}
 						
 			$(".chart-title div").each(function() {

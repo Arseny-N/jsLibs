@@ -10,6 +10,9 @@ body {
 * {
 	border-spacing: 0px;
 }
+.dropDownMenu {
+	list-style: none;
+}
 .chartContainer {
 	border-left: 1px solid rgb(201, 201, 201);
 	border-right: 1px solid rgb(201, 201, 201);	
@@ -116,8 +119,12 @@ body {
 	border-bottom: 1px solid rgb(201, 201, 201);	
 	margin: auto;
 }
-#variant table, #stats #bars,#stats #more,#stats #task-info{
+#variant table, #stats #bars,#stats #task-info{
 	margin : 4px;
+	border: 1px solid rgb(201, 201, 201);	
+}
+#variant table, #stats #bars,#stats #more,#stats #task-info{
+	margin-left : 4px;
 	border: 1px solid rgb(201, 201, 201);	
 }
 #stats #line,#stats #info,#stats #heading{
