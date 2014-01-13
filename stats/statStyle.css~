@@ -17,6 +17,11 @@ body {
 .dropDownMenu .elem-hidden {
 	display: none;
 }
+.dropDownMenu .elem-hidden:hover {
+    background-color: rgb(221, 226, 239);
+    color: rgb(0, 0, 51);
+
+}
 .chartContainer {
 	border-left: 1px solid rgb(201, 201, 201);
 	border-right: 1px solid rgb(201, 201, 201);	
