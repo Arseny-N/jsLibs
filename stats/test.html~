@@ -25,7 +25,7 @@
 		drawStats({'dataLine': {},
 		'appendSelector':'#statsTable',
 		'dataBar':dataBar.dataBarA,
-		
+		'id':'bars',
 		'vDataBar':[{ 'data': [dataBar.dataBarA],"id":'barsA',
 			      'title':'none','hidden':true,
 			      'tdClass':'chartContainerTop', 
@@ -33,15 +33,14 @@
 			    { 'data': [dataBar.dataBar(5),dataBar.dataBar(5)],'id':'barsB','title':'none','hidden':false}, 
 			    { 'data': [dataBar.dataBarC],'id':'barsC','title':'none','hide':true},
 			    { 'data': [dataBar.dataBarC],'id':'barsD','title':'none','hide':true,'tdClass':'chartContainerBottom'}],
-			    vertical: true
+			   // vertical: true
 			});
 		$(".dropDownMenu").each(function(index, element){
 			$(element).mouseenter(function(){
 				$(this).find(".elem-hidden").show('fast');
 			}).mouseleave(function(){
 				$(this).find(".elem-hidden").hide('fast');
-			});
-			$(this).find(".elem-hidden").hide();
+			});		
 		});
 	}	
 

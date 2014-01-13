@@ -1,9 +1,7 @@
 function drawStats(options) {
 			function toggleHide() {
 				var icon = $(this);
-				icon.parents('.chartContainer').find(".chart-body").toggle('fast');
-				//$(this).toggleClass(function(index, elemClass)
-//		{console.log(elemClass=="chart-arrow-up");return elemClass == 'chart-arrow-up'? 'chart-arrow-down':'chart-arrow-up'}, 1);
+				icon.parents('.chartContainer').find(".chart-body").toggle('fast');			
 				if(icon.hasClass("chart-arrow-up")) {
 					icon.removeClass("chart-arrow-up");
 					icon.addClass("chart-arrow-down");
@@ -60,7 +58,7 @@ function drawStats(options) {
 			};
 			var barChartOptions = options && options.barChartOptions ? options.barChartOptions :
 			{
-				id: 'bars', key:'bar' 
+				id: 'barsA', key:'bar' 
 			};
 			barChartOptions.click = showInfo;
 			lineChartOptions.click = showTaskInfo;

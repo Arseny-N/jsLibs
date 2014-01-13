@@ -16,6 +16,7 @@ body {
 }
 .dropDownMenu .elem-hidden {
 	display: none;
+	padding-left: 20px;
 }
 .dropDownMenu .elem-hidden:hover {
     	background-color: rgb(221, 226, 239);

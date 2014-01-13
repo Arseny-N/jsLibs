@@ -54,7 +54,7 @@ var BarChart = function (data,options) {
 		this.axis_prec = options['axis_prec'];
 		
 		this.numBars = this.data.length;
-		
+		console.log(this.id);
 		this.svg = options['svg'] ? options['svg'] : 
 			SVG(this.id).size(
 				options['Width' ]?options['Width' ]:
