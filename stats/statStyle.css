@@ -4,6 +4,9 @@
 body {
 	font: 12px/14px sans-serif;
 }
+div#stats {
+    max-width: 1024px;
+}
 #stats #task-info {
 	width: 400px;
 }
@@ -26,8 +29,13 @@ body {
 	border-left: 1px solid rgb(201, 201, 201);
 	border-right: 1px solid rgb(201, 201, 201);	
 	padding: 0px;	
+	width: 100%;
 
 }
+.chart-body div {
+    text-align: center;
+}
+
 .chartContainerTop {
 	border-top: 1px solid rgb(201, 201, 201);
 }
