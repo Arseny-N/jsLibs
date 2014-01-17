@@ -47,6 +47,7 @@ function drawStats(options) {
 			var showInfo = function () {
 				var stats = this.remember('bar');
 				$( "#line svg" ).remove();
+				$( "")
 				var B = new LineChart(stats.subVals, lineChartOptions).draw();
 				fillInData(stats);
 			};
@@ -58,7 +59,7 @@ function drawStats(options) {
 			};
 			var barChartOptions = options && options.barChartOptions ? options.barChartOptions :
 			{
-				id: 'barsA', key:'bar' 
+				id: 'bars', key:'bar' 
 			};
 			barChartOptions.click = showInfo;
 			lineChartOptions.click = showTaskInfo;

@@ -47,6 +47,7 @@ function drawStats(options) {
 			var showInfo = function () {
 				var stats = this.remember('bar');
 				$( "#line svg" ).remove();
+				$( "#line-help").hide();
 				var B = new LineChart(stats.subVals, lineChartOptions).draw();
 				fillInData(stats);
 			};

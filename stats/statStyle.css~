@@ -95,8 +95,19 @@ div#stats {
 	padding-left: 40px;
 	padding-right: 40px	;
 }
-#stats #task-info, #stats #line-help {
+#stats #task-info {
 	display: none;
+}
+#line-help {
+	padding: 4px;
+}
+#line-help td{
+	vertical-align: middle;
+	font-size: 10px;
+}
+#line-help img {
+	width: 15px;
+	
 }
 #stats #more,#stats #info,#stats #line,#stats #heading,#stats #line-help{
 	border-bottom: 1px solid rgb(201, 201, 201);	
@@ -135,6 +146,11 @@ div#stats {
 #stats #more,#stats #info,#stats #line,#stats #heading{
 	border-bottom: 1px solid rgb(201, 201, 201);	
 	margin: auto;
+}
+
+div#variant{
+	overflow-x: scroll;
+	max-width: 1024;
 }
 #variant table, #stats #bars,#stats #task-info{
 	margin : 4px;
