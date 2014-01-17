@@ -32,6 +32,10 @@ div#stats {
 	width: 100%;
 
 }
+.chart-body div {
+    text-align: center;
+}
+
 .chartContainerTop {
 	border-top: 1px solid rgb(201, 201, 201);
 }
