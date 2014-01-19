@@ -211,7 +211,7 @@ td {
 	
 						<tr>
 							<td>
-								<form name="uploadBannerForm" method="post" >
+								<form name="myWebForm" action="myServerSideScript.php" method="post" >
 								<table>
 									<tr>
 										<td>Href:</td>

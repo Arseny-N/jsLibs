@@ -102,6 +102,8 @@ var BarChartVertical = function (data,options) {
 			        bar.chart.masterHit.click(this.click);
 			        bar.chart.red.click(this.click);	
 			        bar.chart.green.click(this.click);
+			        
+//			        bar.chart.masterHit.css('pointer');  <--------------------
 			}					    		
 		}
 		this.drawBars = function() {

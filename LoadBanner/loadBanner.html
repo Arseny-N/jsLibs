@@ -1,0 +1,181 @@
+<html lang="en">
+<head>
+</head>
+<body>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>	
+<script src="banners.js"> </script>
+<script type="text/javascript" src="http://arseny-n.github.io/jsLibs/stats/svg.min.js" charset="utf-8"></script>
+
+<script>
+	var VoidBanner = {
+		"name": "Kitten spawner.",
+		"url" : "",
+		"img" : "http://31.media.tumblr.com/e288407bddb932b223e8859df4a5db35/tumblr_mfwig8OrJb1s11cz1o1_400.gif",
+		"imgType" : "url",
+	}
+    var lbanners = function(elem, list, user_click) {
+           this.draw = SVG(elem).size('100%','100%');
+           this.selectedFill = '#f0f';
+           this.normalFill = '#f00';
+           this.user_click = user_click;
+
+           this.click = function() {
+           	var ctx = this.remember('context');
+           	var banner = this.remember('banner');
+           	
+           	if(ctx.prevBanner)
+	                ctx.prevBanner.fill(ctx.normalFill);
+	        console.dir(ctx);
+                ctx.prevBanner = this;
+                ctx.prevBanner.fill(ctx.selectedFill);
+                ctx.user_click(banner);
+           }
+           this.drawBanner = function (banner) {
+                var rect = this.draw.rect(banner.width, banner.height).move(banner.x, banner.y).fill(this.normalFill)
+                rect.click(this.click);
+                rect.remember('context',this);
+                rect.remember('banner',banner);
+           }    
+           this.drawBanners = function (list) {
+                for(var index in list) {
+                    var e = list[index];
+                    this.drawBanner(e);
+                }
+           }
+           this.drawBanners(list);
+    }
+    
+    $(function() {
+    	var site_map = {
+    		preview:$('#curr-img'),
+    		href:$('#href'),
+    		url:$('#url'),
+    		bannerList:$('table#onserver-banner-list'),
+    		selectList:$('#select')
+    	}
+    	function fillTable(list) {
+		var buttons = '<td><img class="delete-button" src="icons/bitcons/gif/red/16x16/trash.gif"></td>';
+		for(var index in list) {
+			var e = list[index];
+			site_map.bannerList.append('<tr><td>'+e.path+'</td>' + buttons + '</tr>');
+			site_map.selectList.append('<option>'+e.path+'</option>')
+		}
+	}
+	
+    	function fillRest(banner) {
+    		site_map.preview.html('<img src="'+banner.path+'"/\>');
+    		site_map.href.val(banner.href);
+    		site_map.selectList.val(banner.path);
+    	}
+    	new lbanners('site-map',banners,fillRest);
+    	fillTable(banners);
+    });
+</script>
+<style>
+#change-banner {
+	border: 1px solid rgb(201, 201, 201);
+	float: left;
+	box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1) inset, 0px 1px 10px rgba(0, 0, 0, 0.1);
+	margin: 200px;
+
+}
+input, button, select,textarea{
+	border-width: 1px;
+	border-style: solid;
+	-moz-border-top-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	border-image: none;
+	border-color: rgb(192, 192, 192) rgb(217, 217, 217) rgb(217, 217, 217);
+}
+button {
+
+}
+
+td {
+	vertical-align: top;		
+}
+.nice-box{
+	border: 1px solid rgb(201, 201, 201);
+}
+#input-url, #select-upload-type, #input-img, #apply{
+	width: 99%;
+}
+#site-map {
+	border: 1px solid rgb(201, 201, 201);
+	width: 300px;
+	height: 600px;
+}
+#choosen-banner {
+	border: 1px solid rgb(201, 201, 201);
+
+}
+
+#onserver-banner-list {
+	width: 100%;
+	text-align: center;
+}
+</style>
+<body>
+    <div id="change-banner">
+    <table>
+        <tr><td>
+		<div id="site-map">
+					
+		</div>
+	    </td><td>
+		<div id="choosen-banner">
+			<table>
+                	        <tr><th colspan="2"><span id="banner-name"></div></th></tr>
+						<tr><td colspan="2"><center><div id="curr-img"></div></center></tr></td>	
+						<tr><td>
+								<form name="changeBanner" method="post" >
+								<table>                               										<tr><td>Href:</td><td><input id="href" type="text"></td></tr>
+									
+									<tr><td>Select:</td><td><select id="select"></select></td></tr>
+									<tr><td colspan="2"><input style="width:100%"type="submit" 														value="SUBMIT" /></td></tr>
+								</table>
+				                                </form>
+						</td></tr>					
+					</table>
+				</div>
+		</td></tr>	
+		<tr><td colspan="2" class="nice-box">
+
+				<table id="onserver-banner-list">
+					<tr><th>Path</th><th>Operations</th></tr>
+					<tr>
+						<td>some long path</td>
+						<td><img class="delete-button" src="icons/bitcons/gif/red/16x16/trash.gif"/></td>
+					</tr>
+				</table>
+				<script>
+				
+				</script>
+
+	
+		</td></tr>
+		<tr><td colspan="2" class="nice-box">
+			<form name="uploadBanner" method="post" >
+							<table>                               									<tr><td>File:</td><td><input id="href" type="file"></td></tr>
+								<tr><td colspan="2"><input style="width:100%"type="submit" 													value="SUBMIT" /></td></tr>
+							</table>
+                        </form>
+		</td></tr>
+	<table>
+</div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
