@@ -4,7 +4,7 @@ var LineChart = function (data,options) {
         		        id		: "canvas",
 				axisOrigin 	: [20,10],
 				barHeight 	: 100,
-				barWidth 	: 350,
+				barWidth 	: 250,
 				barChartHeight  : 20,
         		        background	: "#F9F9F9",
 				key		: "stats",        		        
@@ -15,7 +15,7 @@ var LineChart = function (data,options) {
 				pointSizeInc 	: 15,
 				pointHitSize 	: 50,
 			
-				font 		: { family:   'Helvetica',size: 12 },
+				font 		: { family:   'Helvetica',size: 10 },
 			//	ylabels		: ["text1","text2","text3"],
 
 				barStroke 	: {stroke: 'black', width:2,linejoin:"round",opacity: 0.7},
@@ -78,7 +78,7 @@ var LineChart = function (data,options) {
 			this.svg = options['svg'] ? options['svg'] : 
 				SVG(this.id).size(
 					options['Width' ]?options['Width' ]:
-					this.barWidth+this.axisOrigin[0]+140,
+					this.barWidth+this.axisOrigin[0]+150,
 		     			options['Height']?options['Height']:
 		     			this.barHeight+this.axisOrigin[1]+80);	
 		     			
@@ -110,7 +110,7 @@ var LineChart = function (data,options) {
 								
 								}).move(12+f,
 									this.axisOrigin[1]+this.barHeight+ this.textFromAxisDist[0])
-						.rotate(45,f, this.axisOrigin[1]+this.barHeight ).font(this.font).opacity(0.6);
+						.rotate(45,f, this.axisOrigin[1]+this.barHeight ).font(this.font).opacity(0);
 						
 //				elem.chart.textline = this.svg.line(f,this.barHeight + this.axisOrigin[0],f,this.barHeight + this.axisOrigin[0] + 90).fill('none').rotate(-45,f, this.axisOrigin[1]+this.barHeight ).stroke(this.yGridStroke);
 						
@@ -124,21 +124,24 @@ var LineChart = function (data,options) {
 					 };
 				var f_leave = function(){ 
 					elem.chart.point.animate(1000, '<>', 10).size(ps,ps);
-					elem.chart.label.animate(1000, '>', 10).opacity(0.6);
+					elem.chart.label.animate(1000, '>', 10).opacity(0.0);
 					elem.chart.lowerLine.animate(1000, '>', 10).opacity(0);
 					};
 				
 				elem.chart.hitPoint.mouseenter(f_enter);	
-				elem.chart.hitPoint.mouseleave(f_leave);
+				elem.chart.hitPoint.mouseleave(f_leave).attr('cursor','pointer');
+				
 				if(this.click)
 					elem.chart.hitPoint.click(this.click);
 				elem.chart.hitLine.mouseenter(f_enter);	
 				elem.chart.hitLine.mouseleave(f_leave);
+				elem.chart.hitLine.attr('cursor','pointer');
 				if(this.click)
 					elem.chart.hitLine.click(this.click);
 				
 				elem.chart.label.mouseenter(f_enter);	
-				elem.chart.label.mouseleave(f_leave);		
+				elem.chart.label.mouseleave(f_leave);
+				elem.chart.label.attr('cursor','pointer');
 				if(this.click)
 					elem.chart.label.click(this.click);
 					

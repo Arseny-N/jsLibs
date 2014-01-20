@@ -9,7 +9,7 @@ var banners = [{
 		"clicked" : false,
 		
 		"href" : "jquery.org",
-		"img" : "https://jquery.org/resources/members/intel.png",
+		"path" : "https://jquery.org/resources/members/intel.png",
 		"imgType" : "url",
 	},
 	{
@@ -23,7 +23,7 @@ var banners = [{
 		"clicked" : false,
 
 		"href" : "lwn.net",
-		"img" : "http://lwn.net/images/lcorner.png",
+		"path" : "http://lwn.net/images/lcorner.png",
 		"imgType" : "url",
 	},
 	{
@@ -37,7 +37,7 @@ var banners = [{
 		"clicked" : false,
 
 		"href" : "http://www.linuxjournal.com/",
-		"img" : "http://www.linuxjournal.com/files/linuxjournal.com/ufiles/logo-lj.jpg",
+		"path" : "http://www.linuxjournal.com/files/linuxjournal.com/ufiles/logo-lj.jpg",
 		"imgType" : "url",
 	},
 	{
@@ -51,7 +51,7 @@ var banners = [{
 		"clicked" : false,
 
 		"href" : "http://www.linux.org",
-		"img" : "http://www.linux.org/images/linux_org.png",
+		"path" : "http://www.linux.org/images/linux_org.png",
 		"imgType" : "url",
 	},
 	{
@@ -65,6 +65,6 @@ var banners = [{
 		"clicked" : false,
 
 		"href" : "jquery.org",
-		"img" : "http://distrowatch.com/images/jruiakuzm/dwbanner.png",
+		"path" : "http://distrowatch.com/images/jruiakuzm/dwbanner.png",
 		"imgType" : "url",
 	}];

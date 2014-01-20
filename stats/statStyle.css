@@ -118,9 +118,7 @@ div#stats {
 	margin : 4px;
 	border: 1px solid rgb(201, 201, 201);	
 }
-#stats #more {
-	width: 400px;
-}
+
 #stats #heading ,#stats #line-info{
 	text-align: center;
 }
@@ -133,7 +131,7 @@ div#stats {
 	width : 100%;
 }	
 #stats #more, #stats #info td {
-	width: 400px;
+	width: 300px;
 }
 	
 #stats #info td{

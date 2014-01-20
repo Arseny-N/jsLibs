@@ -104,6 +104,7 @@ div#stats {
 #line-help td{
 	vertical-align: middle;
 	font-size: 10px;
+	padding: 4px;
 }
 #line-help img {
 	width: 15px;
@@ -117,9 +118,7 @@ div#stats {
 	margin : 4px;
 	border: 1px solid rgb(201, 201, 201);	
 }
-#stats #more {
-	width: 400px;
-}
+
 #stats #heading ,#stats #line-info{
 	text-align: center;
 }

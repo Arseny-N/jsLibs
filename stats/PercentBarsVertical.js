@@ -74,14 +74,17 @@ var BarChartVertical = function (data,options) {
 			var f_leave = function(){ bar.chart.masterHit.animate(1000, '<>', 10).opacity(0);};
 						
 			bar.chart.masterHit = this.svg.rect( this.barWidth,this.barHeight).opacity(0)
-				.y(this.axisOrigin[1]).cx(cX).remember(this.key,bar).mouseenter(f_enter).mouseleave(f_leave);		
+				.y(this.axisOrigin[1]).cx(cX).remember(this.key,bar)
+				.mouseenter(f_enter).mouseleave(f_leave).attr('cursor','pointer');;		
 				
 			bar.chart.red = this.svg.rect(this.barChartWidth, this.barHeight).fill(this.redFill)
-				.y(this.axisOrigin[1]).cx(cX).remember(this.key,bar).mouseenter(f_enter).mouseleave(f_leave);
+				.y(this.axisOrigin[1]).cx(cX).remember(this.key,bar)
+				.mouseenter(f_enter).mouseleave(f_leave).attr('cursor','pointer');;
 			var greenVal = (bar.value/100)*this.barHeight;
 			bar.chart.green = this.svg.rect((this.barChartWidth), greenVal).fill(this.greenFill)
-				.y(this.axisOrigin[1]+this.barHeight-greenVal).cx(cX).remember(this.key,bar).mouseenter(f_enter).mouseleave(f_leave);
-
+				.y(this.axisOrigin[1]+this.barHeight-greenVal).cx(cX)
+				.remember(this.key,bar).mouseenter(f_enter).mouseleave(f_leave).attr('cursor','pointer');
+				
 			this.svg.text(bar.label).font(this.font).y(this.axisOrigin[0] + this.barHeight + this.scoreFromBarDist).cx(cX);
 			this.svg.text(bar.value + '%').font(this.font).y(this.axisOrigin[0] + this.textFromAxisDist).cx(cX);
 			this.svg.line(this.axisOrigin[0]+this.barWidth*n, 

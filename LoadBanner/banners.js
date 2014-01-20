@@ -1,4 +1,4 @@
-var banners = [{
+[{
 		"name": "upper first banner",
 		"id": "1",
 
