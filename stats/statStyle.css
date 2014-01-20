@@ -8,7 +8,7 @@ div#stats {
     max-width: 840px;
 }
 #stats #task-info {
-	width: 400px;
+	width: 300px;
 }
 * {
 	border-spacing: 0px;
@@ -29,7 +29,7 @@ div#stats {
 	border-left: 1px solid rgb(201, 201, 201);
 	border-right: 1px solid rgb(201, 201, 201);	
 	padding: 0px;	
-	width: 540px;
+	max-width: 532px;
 
 }
 .chart-body div {
@@ -149,7 +149,7 @@ div#stats {
 
 div#variant{
 	overflow-x: scroll;
-	max-width: 1024;
+	max-width: 840px;
 }
 #variant table, #stats #bars,#stats #task-info{
 	margin : 4px;
