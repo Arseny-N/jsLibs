@@ -8,7 +8,7 @@ div#stats {
     max-width: 840px;
 }
 #stats #task-info {
-	width: 400px;
+	width: 300px;
 }
 * {
 	border-spacing: 0px;

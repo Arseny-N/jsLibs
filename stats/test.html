@@ -11,102 +11,104 @@
 
 
 <script type="text/javascript" src="PercentBars.js"></script>
+<script type="text/javascript" src="PercentBarsOne.js"></script>
 <script type="text/javascript" src="PercentBarsVertical.js"></script>
 <script type="text/javascript" src="LineChart.js"></script>
 <script type="text/javascript" src="drawStats.js"></script>
+
 <script type="text/javascript" src="fuzzData.js"></script>
 
 
-<link rel="stylesheet" type="text/css" href="statStyle.css" />
 <script>
+	$( function () { 
+		function drawBars(bars) {
+			for(var i in bars) {	
+				var b = bars[i]
+				console.log(b.id)
+				new BarChartOne({percent: b.percent}, {elem: $('div.graph#'+b.id)} );
+			}
+		}
+		drawBars([{percent: 0.6, id:'B1'},{percent: 0.9, id:'B2'}])
 	
-	function draw() {
-		var dataBar = new fuzzData();
-		drawStats({'dataLine': {},
-		'appendSelector':'#statsTable',
-		'dataBar':dataBar.dataBarA,
-		'vertical':true,
-		'vDataBar':[{ 'data': [dataBar.dataBarA],"id":'barsA',
-			      'title':'none','hidden':true,
-			      'tdClass':'chartContainerTop', 
-			    },
-			    { 'data': [dataBar.dataBar(5),dataBar.dataBar(5)],'id':'barsB','title':'none','hidden':false,'append':true}, 
-			    { 'data': [dataBar.dataBarC],'id':'barsC','title':'none','hide':true},
-			    { 'data': [dataBar.dataBarC],'id':'barsD','title':'none','hide':true,'tdClass':'chartContainerBottom'}],
-			   // vertical: true
-			});
-		$(".dropDownMenu").each(function(index, element){
-			$(element).mouseenter(function(){
-				$(this).find(".elem-hidden").show('fast');
-			}).mouseleave(function(){
-				$(this).find(".elem-hidden").hide('fast');
-			});		
-		});
-	}	
+	} );
 
-	
 	
 </script>
 
-<body onload="draw();">
-<div id="stats">
-	<table id="statsTable">
-		<tr><td>
-			<div id="more">
-				<div id="heading"></div>
-				<div id="line-help">
-				<table><tr><td>	<img src="icons/graph.gif"/> </td>
-					    <td>Чтобы увидеть последние 20 решённых заданий 
-					      щёлкните по интересующему вас графику.</td>
-				</tr></table>
-				</div>
-				<div id="line"></div>
-				<div id="info">
-					
-					<table>
-						<tr><td>Решено всего			</td><td><span></span></td></tr>
-						<tr><td>Количество заданий в банке	</td><td><span></span></td></tr>
-						<tr><td>Решено верно			</td><td><span></span></td></tr>
-						<tr><td>Решено не верно			</td><td><span></span></td></tr>
-						<tr><td>Пропущено			</td><td><span></span></td></tr>
-					</table>
-					
-				</div>
-			</div></center>				
-			<div id="task-info">
-					<center>
-					<table>
-						<tr><td>Задание решено 			</td><td><span></span></td></tr>
-						<tr><td>Код задания			</td><td><span></span></td></tr>
-						<tr><td>Ваш ответ			</td><td><span></span></td></tr>
-						<tr><td>Верный ответ			</td><td><span></span></td></tr>
-						<tr><td>Статус				</td><td><span></span></td></tr>
-					</table>				
-					</center>
-			</div>
-		</td></tr>
+<style>
 
-		<tr><td class="chartContainer chartContainerTop">
-			<div class="chart-title" >
-				<span>Blah Blah title</span> 			
-				<div class="chart-arrow-down"> </div>
-			</div>
-			<div class="chart-body" id="barsA"></div>
-		</td></tr>
-
-				
-	</table>
-</div>
-<div id="variant">
-	
-	<table id="appendMe">
-		<tr><td>a</td><td rowspan="3">a</td></tr>
+.stats-table td{
+	width: 25px;
+	text-align: center;
 		
-		<tr><td>a</td></tr>
-		<tr><td>a</td></tr>
-		<tr><td>a</td></tr>
+}
+.stats-table {
+	font: 12px/14px sans-serif;
+	border-spacing: 0px;
+}
+.stats-table th.horizontal-index{
+	border: 1px solid rgb(201,201,201);
+	border-top: 0px solid rgb(201,201,201);
+}
+.stats-table th.horizontal-index.vertical-index{
+	border: 1px solid rgb(201,201,201);
+
+}
+.stats-table th.vertical-index{
+	border: 1px solid rgb(201,201,201);
+	border-left: 0px solid rgb(201,201,201);
+}
+div.graph {
+	height: 100px;
+	width: 15px;
+	margin: 0.5px auto;		
+}
+td.data-container {
+
+	border: 1px solid rgb(201,201,201);
+	border-top: 0px solid rgb(201,201,201);
+}
+td.graph-container {
+	padding: 0px;
+	margin: 0px;
+	border-bottom: 1px solid rgb(201,201,201);
+}
+</style>
+
+<body>
+<div id="stats">
+	<table class="stats-table">
+		<tr >
+			<th class="horizontal-index vertical-index"	></th>
+			<th colspan="2" class="vertical-index">B1</th>
+			<th colspan="2" class="vertical-index">B1</th>		
+		</tr>
+		<tr >
+			<th class="horizontal-index">Про­то­ти­пов в базе</th>
+				<td class="graph-container" rowspan="4" > <div class="graph" id="B1"></div></td>
+				<td class="data-container">25</td>
+				<td class="graph-container" rowspan="4" ><div class="graph" id="B2"></div></td>
+				<td class="data-container">46</td>
+		</tr>
+		<tr >
+			<th class="horizontal-index">Решалось</th>
+			<td class="data-container">0</td>
+			<td class="data-container">0</td>
+		</tr>
+		<tr >
+			<th class="horizontal-index">Верно</th>
+				<td class="data-container"><!--0% -->0</td>
+				<td class="data-container"><!--0% -->0</td>
+			</tr>
+		<tr >
+			<th class="horizontal-index">Статистика</th>
+				<td class="data-container"><!--0% -->0</td>
+				<td class="data-container"><!--0% -->0</td>
+		</tr>
 	</table>
-	
+
+</div>
+
 </body>
 
 
