@@ -25,7 +25,7 @@
 			for(var i in bars) {	
 				var b = bars[i]
 				console.log(b.id)
-				new BarChartOne({percent: b.percent}, {elem: $('#'+b.id)} );
+				new BarChartOne({percent: b.percent}, {elem: $('div.graph#'+b.id)} );
 			}
 		}
 		drawBars([{percent: 0.6, id:'B1'},{percent: 0.9, id:'B2'}])

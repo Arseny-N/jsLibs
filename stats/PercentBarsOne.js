@@ -1,9 +1,9 @@
 var BarChartOne = function (data,options) {
 	var default_args = {
      		elem : undefined,
-     		fill :{color:'#009', opacity: 0.8},
+     		fill :{color:'#009', opacity: 0.9},
      		stroke :{width:9, color:'#00f', opacity: 0.8},
-     		fill_bg :{color:'#fff', opacity: 0.8},
+     		fill_bg :{color:'#009', opacity: 0.3},
      		font : {family:   'Helvetica', size:     '0.5em'}
      		
 	}
@@ -17,7 +17,7 @@ var BarChartOne = function (data,options) {
 	this.stroke = options['stroke'];
 	this.fill_bg = options['fill_bg'];
 	console.dir(this.elem);
-	this.draw = SVG(this.elem.get(0)).size('100%','100%');
+	this.draw = SVG(this.elem.get(0)).size('102%','100%');
 
 	this.height = this.elem.height();
 	this.width = this.elem.width();
@@ -25,7 +25,7 @@ var BarChartOne = function (data,options) {
 	console.dir(this.draw)
 	this.drawBar = function(data) {
 		this.draw.rect( this.width,this.height).fill(this.fill_bg).move(0,0);
-		this.draw.rect( this.width,this.height*data.percent).fill(this.fill).x(0).y(this.height*(1-data.percent));
+		this.draw.rect( this.width,this.height*data.percent).fill(this.fill).x(0).y(this.height*(1-data.percent)+1);
 		//this.draw.text(''+(data.percent*100)+'%').cx(this.width/2).y(this.height*data.percent).font(this.font)
 		//this.draw.line(0,this.height-20,this.height-2, this.width ).stroke({ width: 1 });
 		
