@@ -13,10 +13,10 @@ var LineChart = function (data,options) {
 			
 				pointSize 	: 10,
 				pointSizeInc 	: 15,
-				pointHitSize 	: 50,
-			
+				pointHitSize 	: 30,
+				title 		: "Более подробно",
 				font 		: { family:   'Helvetica',size: 10 },
-			//	ylabels		: ["text1","text2","text3"],
+				ylabels		: ["верно","пропущено","не верно"],
 
 				barStroke 	: {stroke: 'black', width:2,linejoin:"round",opacity: 0.7},
 				
@@ -34,10 +34,11 @@ var LineChart = function (data,options) {
 		        }	
         
 		        this.id = options['id'];
+	          	this.arg = options['arg'];
 		        
 			this.data = data;
 			this.key = options['key'];
-			
+			this.title = options['title'];
 			this.axisOrigin = options['axisOrigin'];
 			this.barHeight = options['barHeight'];
 			this.barWidth = options['barWidth'];
@@ -78,7 +79,7 @@ var LineChart = function (data,options) {
 			this.svg = options['svg'] ? options['svg'] : 
 				SVG(this.id).size(
 					options['Width' ]?options['Width' ]:
-					this.barWidth+this.axisOrigin[0]+150,
+					this.barWidth+this.axisOrigin[0]+20,
 		     			options['Height']?options['Height']:
 		     			this.barHeight+this.axisOrigin[1]+80);	
 		     			
@@ -130,14 +131,15 @@ var LineChart = function (data,options) {
 				
 				elem.chart.hitPoint.mouseenter(f_enter);	
 				elem.chart.hitPoint.mouseleave(f_leave).attr('cursor','pointer');
-				
+			
 				if(this.click)
 					elem.chart.hitPoint.click(this.click);
 				elem.chart.hitLine.mouseenter(f_enter);	
 				elem.chart.hitLine.mouseleave(f_leave);
 				elem.chart.hitLine.attr('cursor','pointer');
-				if(this.click)
-					elem.chart.hitLine.click(this.click);
+				if(this.click) {
+					elem.chart.hitLine.click(this.click);		
+				}
 				
 				elem.chart.label.mouseenter(f_enter);	
 				elem.chart.label.mouseleave(f_leave);
@@ -149,7 +151,14 @@ var LineChart = function (data,options) {
 				elem.chart.hitLine.remember(this.key,elem);
 				elem.chart.label.remember(this.key,elem);
 				
+				elem.chart.hitPoint.remember('arg',this.arg);
+				elem.chart.hitLine.remember('arg',this.arg);
+				elem.chart.label.remember('arg',this.arg);
 				
+
+				elem.chart.hitPoint.attr('title',this.title);
+				elem.chart.hitLine.attr('title',this.title);
+				elem.chart.label.attr('title',this.title);
 				
 				
 				
@@ -191,15 +200,19 @@ var LineChart = function (data,options) {
 					      
 				
 				if(this.ylabels) {
+					k = 15;
+					d = 2;
+					font = this.font;
+					font['opacity'] = 0.5;
 					this.svg.text(this.ylabels[0])
-							.cy(this.axisOrigin[1] + this.chartTabs )
-							.x(this.axisOrigin[0]-this.textFromAxisDist[1]).font(this.font);
+							.cy(this.axisOrigin[1] + this.chartTabs - k )
+							.x(this.axisOrigin[0]+d).font(font);
 					this.svg.text(this.ylabels[1])
-							.cy(this.axisOrigin[1] + this.barHeight/2 )
-							.x(this.axisOrigin[0]-this.textFromAxisDist[1]).font(this.font);
+							.cy(this.axisOrigin[1] + this.barHeight/2 - k)
+							.x(this.axisOrigin[0]+d).font(font);
 					this.svg.text(this.ylabels[2])
-							.cy(this.axisOrigin[1] + this.barHeight-this.chartTabs )
-							.x(this.axisOrigin[0]-this.textFromAxisDist[1]).font(this.font);
+							.cy(this.axisOrigin[1] + this.barHeight-this.chartTabs -k)
+							.x(this.axisOrigin[0]+d).font(font);
 				}
 
 					

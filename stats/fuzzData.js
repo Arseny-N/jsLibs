@@ -120,6 +120,7 @@ var fuzzData =function() {
 			 {'label': 'B16' ,'labelplus':'Description of this...','value': (f2)(),'subVals': (dataLine)() ,
 			 'numSuccSolvedTasks' : m = (f3)(),'numUnSuccSolvedTasks': n = (f3)(),'numSolvedTasks' : m+n,
 			 'totalNumTasks':  (f3)(),'numIgnTasks' : (f3)() },
+			 
 			 {'label': 'C1' ,'labelplus':'Description of this...','value': (f2)(),'subVals': (dataLine)(), 
 			 'numSuccSolvedTasks' : m = (f3)(),'numUnSuccSolvedTasks': n = (f3)(),'numSolvedTasks' : m+n,
 			 'totalNumTasks':  (f3)(),'numIgnTasks' : (f3)() },
