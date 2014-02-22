@@ -1,0 +1,131 @@
+<html lang="rus">
+<head>
+	<meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>	
+	<script>
+		$(function(){
+			var Parser = function(text, mode){
+				this.text = text;
+				this.parsed = [];
+				this.reparse = false;
+				this.pfuncs = {
+					reparse : {
+						regexp : /[\d\(\)]* *[\u0410-\u042f][^.!?]*[ .!?\t\n]*/g,
+						push_text : function(arr, text, index) {
+							index_old = text.match(/\(([0-9]*)\)/);
+							text = text.replace(/\([0-9]*\)/, "");	
+							indexed = false;
+							if(index_old)
+								indexed = true;
+							else
+								console.log(text);
+							arr.push({"index":index,"indexed": indexed,"text":text});
+						},
+						get_text : function(arr_elem) {
+								//console.dir(arr_elem);
+							if(arr_elem.indexed)
+								return "("+arr_elem.index+")"+arr_elem.text;	
+							else
+								return arr_elem.text;	
+						},
+						adj_indexes : function(arr) {
+							var j=0;
+							console.log("hello")
+							for(var i in arr) {	
+								var e = arr[i];
+								if(e.indexed) {
+									e.index = j++;
+								} else {
+						console.dir(e)						
+								}
+							}
+							
+						}
+					},
+					normal : { 
+						regexp : /[\u0410-\u042f][^.!?]*[.!? \t\n]*/g,
+						push_text : function(arr, text, index) {
+							arr.push({"index":index, "text":text});
+						},
+						get_text : function(arr_elem) {
+							return "("+arr_elem.index+") "+arr_elem.text;	
+						}
+						
+					}
+				}
+				this.mode = this.pfuncs[mode];
+				
+				this.parse_text = function() {
+					var p = this.text.match(this.mode.regexp);
+					console.dir(p);
+					for(var index in p) {
+						var text = p[index];
+						this.mode.push_text(this.parsed, text, index);
+					}
+				}
+				this.get_indexed =  function() {
+					var r = "";
+					if(this.mode.adj_indexes)
+						this.mode.adj_indexes(this.parsed);
+						
+					for(var index in this.parsed) {
+						var e = this.parsed[index];
+						r += this.mode.get_text(e);
+					}
+					return r;
+				}
+				
+				this.parse_text();
+				
+				return this;
+			}
+			$('button').click(function(e){
+				e.preventDefault();								
+				var area = $('textarea');
+				var p = new Parser(area.val(), $(this).val());
+				var indexed = p.get_indexed();
+				if(indexed)
+					area.val(indexed);
+			});
+		})
+	</script>
+	<style>
+	</style>
+</head>
+<style>
+textarea {
+	width:100%; 
+	height:50%
+}
+button, textarea{
+	border-width: 1px;
+	border-style: solid;
+	-moz-border-top-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	border-image: none;
+	border-color: rgb(192, 192, 192) rgb(217, 217, 217) rgb(217, 217, 217);
+}
+button:hover{
+	background: #ddd;
+}
+</style>
+<body >
+
+	<textarea name="text">
+	(0) В начале 90-х я довольно много занимался статистикой советского террора. (1) Изучил огромное количество отчетных «простыней» о терроре за все годы, из разных регионов Советского Союза. (2) Статистика у нас всерьез начинается с 1921 г., (3) А, начиная с 1921 года – огромные папки. (4) Году в 1994-м я все изучил, все расписал и сложил. (5) Дальше – нужно было публиковать. (6) Я посмотрел на свои цифры.(7) Вокруг меня во внешнем мире существуют люди, мнение которых важно для меня: существует традиционное интеллигентское общественное мнение, и, что самое главное, мнение бывших заключенных, которых в 1994 г. (8) И они мерили наши жертвы за всю историю террора какими-то совершенно немыслимыми цифрами, десятками миллионов.
+
+(9) А по моим подсчетам за всю историю советской власти, от 1918 до 1987 года (последние аресты были в начале 1987-го), по сохранившимся документам получилось, что арестованных органами безопасности по всей стране было 7 миллионов 100 тысяч человек. (10) При этом, среди них были арестованные не только по политическим статьям. (11) И довольно много. (12) Да, их арестовали органы безопасности, но органы безопасности арестовывали в разные годы и за бандитизм, контрабанду, фальшивомонетничество. (13) И по многим другим «общеуголовным» статьям.
+
+(14) Под все эти цифры есть папки с документами. (15) В ежегодных отчетах органов безопасности значится: привлеченных – столько-то, в том числе с арестом, в том числе без ареста. (16) Дальше начинается таблица движения арестованных. (17) Прошло по законченным следственным делам – столько-то, в том числе, передано на особое совещание – столько-то, передано в суды и трибуналы – столько-то. (18) В несудебные органы – столько-то. (19) Бежало, умерло – вся статистика. (20) Побегов, кстати, было очень мало.
+
+(21) И вот цифра итоговая – 7 миллионов. (22) Это за всю историю советской власти. (23) Что с этим делать? (24) А общественное мнение говорит, что у нас чуть ли не 12 миллионов арестованных только за 1937-1939-й. (25) И я принадлежу этому обществу, живу среди этих людей, я их часть. (26) Не советской власти часть, не российской демократии, а этих людей. (27) Просто точно знал, что, во-первых, не поверят. (28) А, во-вторых, для круга, к которому я считаю себя принадлежащим, это значило бы, что все, что нам говорили о цифрах до этих пор вполне уважаемые нами люди, неправда.
+
+(29) И отложил я все свои вычисления в сторону. (30) Надолго. (31) А потом уж (через годы) вроде уже можно было публиковать, а времени не нашлось. (32) Пока. </textarea>
+	<button value="normal"> Пронумеровать </button>
+	<button value="reparse"> Перенумеровать </button>
+
+</body>
+
+
