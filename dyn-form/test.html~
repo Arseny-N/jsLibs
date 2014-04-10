@@ -1,0 +1,61 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundation</title>
+    <link rel="stylesheet" href="css/app.css" />
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+  </head>
+  <body>
+  	<br>  	<br>  	<br>
+  	  	<br>  	<br>  	<br>
+  	<div class="dyn-form">
+  	<div class="row">
+        	<div class="small-8 small-centered columns">
+        		<div class="panel text-center question-container">
+        		    hello word?
+		        </div>            
+	          </div>
+	 </div>
+         <div class="row">
+        	<div class="small-8 small-centered columns">
+  			<div class="panel text-center button-container">  
+        		</div>			
+		</div>			
+          </div>
+       	  <div class="row">
+	       	<div class="small-8 small-centered  columns">
+	        	<div class="panel input-container hide">
+		          	<div class="row">
+	       				<div class="small-8 small columns">
+						 <input type="text"  />
+					</div>
+        				<div class="small-4 small columns">
+						<a href="#" class="button small">Отправить</a>
+					</div>						
+				</div>					
+		          </div>	
+	   	</div>					
+          </div>
+      	  <div class="row">
+	       	<div class="small-8 small-centered  columns">
+			<div class="alert-box alert radius alert-container hide">
+				<span></span>
+				<a href="#" class="close">&times;</a>
+			</div>
+		</div>
+	</div>		
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+
+    <script src="js/dyn-form.js"></script>
+<script>
+	$(function(){
+		var f = new DynForm(FORM);
+		f.next();
+	})
+</script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundation</title>
+    <link rel="stylesheet" href="css/app.css" />
+    <script src="bower_components/modernizr/modernizr.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+  </head>
+  <body>
+  	<br>  	<br>  	<br>
+  	  	<br>  	<br>  	<br>
+  	<div class="dyn-form">
+  	<div class="row">
+        	<div class="small-8 small-centered columns">
+        		<div class="panel text-center answer-container">
+
+		        </div>            
+	          </div>
+	 </div>
+           
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="js/dyn-form.js"></script>
+<script>
+	var messages = [
+		{ 
+			range : [0, 50],
+			text : 'У вас нет туберкулёза.'
+		},
+		{ 
+			range : [51, 100],
+			text : '%result % что туберкулёз у вас есть.'
+		}
+	]
+	$(function(){
+		function getUrlVars() {
+			var vars = [], hash;
+			var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+			for(var i = 0; i < hashes.length; i++) {
+		        	hash = hashes[i].split('=');
+        			vars.push(hash[0]);
+        			vars[hash[0]] = hash[1];
+    			}
+    			return vars;
+		
+		}
+		var res = parseInt( getUrlVars()['result']);
+		for(var i in messages) {
+			var msg = messages[i];
+			if( msg.range[0] <= res &&  res <= msg.range[1] ) {
+				console.dir([msg,res,messages]);
+				break;
+			}
+		}
+
+		$('.answer-container').html(msg.text.replace('%result', getUrlVars()['result']));
+		
+		
+	})
+</script>
+  </body>
+</html>
