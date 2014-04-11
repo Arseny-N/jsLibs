@@ -216,7 +216,7 @@ DynForm.prototype.redirect = function() {
 
 }
 DynForm.prototype.next = function() {
-	console.log(this.index)
+
 	if(this.index >= this.questions.length) {
 		this.redirect();
 		return;
