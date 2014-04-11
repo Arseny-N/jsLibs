@@ -51,7 +51,7 @@
 	</div>
 
 	
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+
     <script src="js/dyn-form.js"></script>
     <script src="js/jquery.knob.js"></script>
     <script type="text/javascript">
