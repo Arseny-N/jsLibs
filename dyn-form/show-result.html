@@ -12,16 +12,51 @@
   	<br>  	<br>  	<br>
   	  	<br>  	<br>  	<br>
   	<div class="dyn-form">
-  	<div class="row">
-        	<div class="small-8 small-centered columns">
-        		<div class="panel text-center answer-container">
-
-		        </div>            
-	          </div>
+	<div class="panel">
+  		<div class="row">
+        		<div class="small-8 small-centered columns">
+        			<div class="panel text-center answer-container">
+	
+			        </div>            
+		          </div>
+		 </div>
 	 </div>
-           
+ 	<div class="row">
+       		<div class="small-8 small-centered columns">
+			 <div class="panel">
+	 
+				 <div class="row">
+			    	 	<div class="small-12 small-centered columns text-center">
+						<a href="http://arseny-n.github.io/jsLibs/dyn-form/" class="button small">
+						Пройти ещё раз</a>
+			    	 	</div>
+			    	 </div>
+	    			 <div class="row">
+			    	 	<div class="small-12 small-centered columns text-center">
+	    		 	           <div class="pluso" data-background="transparent" 
+	    		 	           	data-options="medium,square,line,horizontal,nocounter,theme=06" 
+	    		 	           	data-services="vkontakte,odnoklassniki,facebook,twitter,google,moimir,email,print,bookmark"></div>
+	    	 	 		</div>
+	    			 </div>
+			</div>	    	 	 		
+	    	 </div>
+	</div>
+
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="js/dyn-form.js"></script>
+    <script type="text/javascript">
+    (function() {
+		if (window.pluso)
+			if (typeof window.pluso.start == "function") return;
+  		if (window.ifpluso==undefined) { 
+  			window.ifpluso = 1;
+    			var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
+    			s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
+    			s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
+    			var h=d[g]('body')[0];
+    			h.appendChild(s);
+  		}
+  	})();</script>
 <script>
 	var messages = [
 		{ 

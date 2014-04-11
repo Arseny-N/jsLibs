@@ -17,7 +17,7 @@ var FORM = {
 			text : 	'В какой стране вы находитесь?',
 			answers : [
 				{	
-					classes : 'success',
+					classes : 'warn',
 					text : 'Определить',
 					text2 : 'Дальше',
 					run : {
@@ -53,12 +53,13 @@ var FORM = {
 					classes : 'success',
 					text : 'да',
 					input : {	
+						text : 'Введите размер вашего манту.',
 						type : 'integer',
 						range : [0, 20],
 						errMsg : 'Манту не может быть больше 20 мм. или меньше 0!',
 						weigth : [ { range :  [0,  5] , weight : 0 },
 	  						   { range :  [5, 10] , weight : 1 },
-	  						   { range :  [10,20] , weight : 2 }
+	  						   { range :  [10,21] , weight : 2 }
 						 ]
 						 
 					},
@@ -83,6 +84,7 @@ var DynForm = function(form) {
 	this.result = 0;
 	this.domain = window.location.pathname;
 	this.domain = 'file:///home/arseni/Documents/web/temp/dyn-form'
+	this.domain = 'http://arseny-n.github.io/jsLibs/dyn-form/'
 
 	self = this;
 	this.once = {}
@@ -102,6 +104,7 @@ var DynForm = function(form) {
 	});
 	this.e.inputs = {};
 	this.e.inputs.root = $('.input-container');	
+	this.e.inputs.text = $('.input-container p');
 	this.e.inputs.input = $('.input-container input');
 	this.e.inputs.button = $('.input-container a');
 	
@@ -119,7 +122,7 @@ DynForm.prototype.empty = function() {
 	this.e.question.text('');
 	this.e.buttons.text('');
 	
-	this.e.inputs.root.slideUp();
+	this.e.inputs.root.hide();
 	this.e.alert.root.hide();
 	this.e.inputs.input.val('');
 
@@ -144,7 +147,7 @@ DynForm.prototype.fill = function(quest) {
 			console.dir(a)
 			if(a.input) {
 				self.e.inputs.root.slideDown();
-
+				self.e.inputs.text.html(a.input.text);
 				self.e.inputs.button.click(function(){
 					var val = self.e.inputs.input.val();
 					if(val < a.input.range[0] || val >= a.input.range[1])  {
