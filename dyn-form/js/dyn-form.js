@@ -216,11 +216,11 @@ DynForm.prototype.redirect = function() {
 
 }
 DynForm.prototype.next = function() {
-	this.empty();
-	console.log(this.index)
+
 	if(this.index >= this.questions.length) {
 		this.redirect();
 		return;
 	}
+	this.empty();
 	this.fill(this.questions[this.index++])	
 }
