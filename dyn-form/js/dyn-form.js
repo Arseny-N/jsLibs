@@ -144,7 +144,6 @@ DynForm.prototype.fill = function(quest) {
 		n.html(a.text);
 		
 		(function(n,a,self) { n.click(function(){
-			console.dir(a)
 			if(a.input) {
 				self.e.inputs.root.slideDown();
 				self.e.inputs.text.html(a.input.text);

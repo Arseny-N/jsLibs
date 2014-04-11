@@ -15,20 +15,28 @@
 	<div class="panel">
   		<div class="row">
         		<div class="small-8 small-centered columns">
-        			<div class="panel text-center answer-container">
+        			<div class="text-center answer-container hide">
 	
-			        </div>            
-		          </div>
+			        </div>   
+			        <div class="text-center greet-container">
+					Краинее сложные вычисления...
+			        </div>         
+				
+				<div class="text-center progress-bar" style="margin-top:40px">
+					<input type="text"  value="1" data-width="150" data-min="0"
+						data-max="100" data-displayInput=false >
+				</div>      
+			 </div>
 		 </div>
 	 </div>
  	<div class="row">
        		<div class="small-8 small-centered columns">
-			 <div class="panel">
+			 <div class="panel feed-back-container hide">
 	 
 				 <div class="row">
 			    	 	<div class="small-12 small-centered columns text-center">
 						<a href="http://arseny-n.github.io/jsLibs/dyn-form/" class="button small">
-						Пройти ещё раз</a>
+						Пройти тест</a>
 			    	 	</div>
 			    	 </div>
 	    			 <div class="row">
@@ -42,8 +50,10 @@
 	    	 </div>
 	</div>
 
+	
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="js/dyn-form.js"></script>
+    <script src="js/jquery.knob.js"></script>
     <script type="text/javascript">
     (function() {
 		if (window.pluso)
@@ -56,9 +66,14 @@
     			var h=d[g]('body')[0];
     			h.appendChild(s);
   		}
-  	})();</script>
-<script>
+  	})();
+  	</script>
+	<script>
 	var messages = [
+		{ 
+			ignore : true,
+			text : 'Вы не прошли теста, пройдите его.'
+		},
 		{ 
 			range : [0, 50],
 			text : 'У вас нет туберкулёза.'
@@ -80,19 +95,47 @@
     			return vars;
 		
 		}
-		var res = parseInt( getUrlVars()['result']);
+		var result  = getUrlVars()['result'];
+		var resInt = parseInt(result);
+
 		for(var i in messages) {
 			var msg = messages[i];
-			if( msg.range[0] <= res &&  res <= msg.range[1] ) {
-				console.dir([msg,res,messages]);
+			if( !msg.ignore && msg.range[0] <= resInt &&  resInt <= msg.range[1] ) 
 				break;
-			}
+			
 		}
+		if( msg.range[0] >= resInt ||  resInt >= msg.range[1] || result === undefined) 
+			msg = messages[0];
 
-		$('.answer-container').html(msg.text.replace('%result', getUrlVars()['result']));
+		var e = {};
+		e.greet = $("div.greet-container");
+		e.answer = $("div.answer-container");
+		e.fb = $("div.feed-back-container");
 		
+		e.bar = {};
+		e.bar.input = $(".progress-bar input");
+		e.bar.root = $("div.progress-bar");
+		
+		$('.answer-container').html(msg.text.replace('%result', result));
+		e.bar.input.knob({
+			readOnly : true
+		});
+		var progress = 0;
+		var interval = setInterval( function() {
+					progress = Math.min( progress + 0.05, 1 );
+					e.bar.input.val(progress * 100).trigger('change');
+					if( progress === 1 ) {
+						clearInterval( interval );
+						e.bar.root.slideUp();
+						e.greet.slideUp();
+						e.answer.slideDown();
+						e.fb.slideDown();
+						
+					}
+					
+		}, 150 );
 		
 	})
-</script>
+	</script>
   </body>
 </html>
