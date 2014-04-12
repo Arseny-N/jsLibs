@@ -215,7 +215,7 @@ DynForm.prototype.redirect = function() {
 		var q = this.questions[i];
 		for( var m in q.answers) {
 			var j = q.answers[m];
-			sum += Number.parseInt(j.weight);
+			sum += weight;
 		}
 		
 	}
