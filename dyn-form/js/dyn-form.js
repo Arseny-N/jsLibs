@@ -89,7 +89,15 @@ var DynForm = function(form) {
 	self = this;
 	this.once = {}
 	
-	this.e = {};
+	this.t = {}; /* Text */	
+	this.t.last = {};
+	this.t.last.text = 'Завершить тест и вывести результаты.'
+	this.t.last.button = 'Завершить'
+	
+	this.c = {}; /* Classess */
+	this.c.button = 'button small'
+	
+	this.e = {}; /* Elements */
 	this.e.root = $('.dyn-form');
 	this.e.question = $('.question-container');
 	this.e.buttons = $('.button-container');
@@ -135,9 +143,10 @@ DynForm.prototype.alert = function(msg) {
 DynForm.prototype.fill = function(quest) {
 
 	this.e.question.text(quest.text);
+	
 	for(var i in quest.answers) {
 		var a = quest.answers[i];
-		var n = $('<a>').addClass('button small');
+		var n = $('<a>').addClass(this.c.button);
 		if(a.classes) 
 			n.addClass(a.classes);
 		n.attr({href:'#'})
@@ -211,16 +220,21 @@ DynForm.prototype.redirect = function() {
 		
 	}
 	var r = this.result * 100 / sum;
-
-	window.location.href = this.domain + '/show-result.html?result=' + Math.round(r);
-
+	var href = this.domain + '/show-result.html?result=' + Math.round(r);
+	window.location.href = href;
+	
+	var n = $('<a>').addClass(this.c.button);
+	n.attr({'href':href});
+	n.html(this.t.last.button);
+	this.e.buttons.append(n);
+	this.e.question.text(this.t.last.text);
 }
 DynForm.prototype.next = function() {
-
+	this.empty();
 	if(this.index >= this.questions.length) {
 		this.redirect();
 		return;
 	}
-	this.empty();
+
 	this.fill(this.questions[this.index++])	
 }
