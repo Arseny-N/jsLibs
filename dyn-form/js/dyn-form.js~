@@ -23,8 +23,12 @@ var FORM = {
 					run : {
 						'func' : 'ip-locate',
 						res : [ 
-							{ val : 'RU' ,  weight : 2, text : 'Вы находитесь в России'} 
+							{ val : 'R-U' ,  weight : 2, text : 'Вы находитесь в России'} 
+
 						],
+						onMatch : {
+							weight : 0, text : 'Вы находитесь в %result'
+						}
 
 					},				
 					weight : 2
@@ -136,6 +140,10 @@ DynForm.prototype.empty = function() {
 
 	
 }
+DynForm.prototype._weight = function(a) {
+	console.dir(a)
+	return (('weight' in a) ? a['weight'] : 0);
+}
 DynForm.prototype.alert = function(msg) {
 	this.e.alert.msg.html(msg);	
 	this.e.alert.root.slideDown().delay(this.e.alert.delay).slideUp();	
@@ -167,7 +175,7 @@ DynForm.prototype.fill = function(quest) {
 					for(var j in a.input.weigth) {
 						var w = a.input.weigth[j];
 						if(val >= w.range[0] && val <= w.range[1]) {
-							self.result += w.weight;
+							self.result += self._weight(w);
 
 							break;			
 						} 
@@ -179,18 +187,27 @@ DynForm.prototype.fill = function(quest) {
 			} else if(a.run) {
 
 				self.runFuncsLookup[a.run.func](function(country){
-					for(var i in a.run.res) 
-						if(country == a.run.res[i].val)
-							break;
-							
+				
 					if(self.once.run)         /* FIND THAT BUG */
 						return;
 					self.once.run = true;
 					
-					self.result += a.run.res[i].weight;						
+					var res;
+					
+					for(var i in a.run.res) 
+						if(country == a.run.res[i].val)
+							break;
+							
+				
+					if(country == a.run.res[i].val)
+						res = a.run.res[i];
+					else
+						res = a.run.onMatch;
+					console.dir(a.run);
+					self.result += self._weight(res);	
+					
 					n.html(a.text2);
-					self.e.question.html('<span> ' + a.run.res[i].text+ '</span>')
-					console.trace();
+					self.e.question.html('<span> ' + res.text.replace('%result', country) + '</span>')
 					
 				});
 				n.click(function(){
@@ -199,7 +216,7 @@ DynForm.prototype.fill = function(quest) {
 				})
 												
 			} else{
-				self.result += a.weight;
+				self.result += self._weight(a);
 				self.next();
 			}
 					
@@ -215,7 +232,7 @@ DynForm.prototype.redirect = function() {
 		var q = this.questions[i];
 		for( var m in q.answers) {
 			var j = q.answers[m];
-			sum += weight;
+			sum += j.weight;
 		}
 		
 	}

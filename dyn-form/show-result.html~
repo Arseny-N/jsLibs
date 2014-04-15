@@ -5,10 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Foundation</title>
     <link rel="stylesheet" href="css/app.css" />
+        <link rel="stylesheet" href="css/font/blenda-script/stylesheet.css" />
     <script src="bower_components/modernizr/modernizr.js"></script>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
   </head>
   <body>
+  <div class="top-panel">
+	<div class="row">
+		<div class="small-12 small-centered columns text-center">
+			<h1 class="font blenda-script">Tuberculosis diagnosis</h1>
+		</div>
+	</div>
+  </div>
   	<br>  	<br>  	<br>
   	  	<br>  	<br>  	<br>
   	<div class="dyn-form">
@@ -80,7 +88,7 @@
 		},
 		{ 
 			range : [51, 100],
-			text : '%result % что туберкулёз у вас есть.'
+			text : '%result % что туберкулёз у вас есть. Обратитесь к врачу.'
 		}
 	]
 	$(function(){
@@ -104,7 +112,7 @@
 				break;
 			
 		}
-		if( msg.range[0] >= resInt ||  resInt >= msg.range[1] || result === undefined) 
+		if( msg.range[0] > resInt ||  resInt > msg.range[1] || result === undefined) 
 			msg = messages[0];
 
 		var e = {};
