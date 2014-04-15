@@ -23,7 +23,7 @@ var FORM = {
 					run : {
 						'func' : 'ip-locate',
 						res : [ 
-							{ val : 'R-U' ,  weight : 2, text : 'Вы находитесь в России'} 
+							{ val : 'RU' ,  weight : 2, text : 'Вы находитесь в России'} 
 
 						],
 						onMatch : {
