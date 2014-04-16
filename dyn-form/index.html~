@@ -90,7 +90,7 @@
 		f.progress(0);
 
 		f.next();
-			f.alert('Caution!<br> This web site should not be used as a medical resource.',true);
+			f.alert('Caution!<br> This web site should not be used as a medical resource.');
 
 	})
 </script>
