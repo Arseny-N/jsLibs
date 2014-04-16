@@ -330,6 +330,7 @@ DynForm.prototype.empty = function() {
 	this.e.buttons.text('');
 	
 	this.e.inputs.root.hide();
+	this.e.buttons.show();
 	this.e.alert.root.hide();
 	this.e.inputs.input.val('');
 
@@ -368,6 +369,7 @@ DynForm.prototype.input = function(text,cb, pass, input) {
 		cb = funcs[cb];
 	
 	this.e.inputs.root.slideDown();
+	this.e.buttons.hide();
 	if (text)
 		this.e.inputs.text.html(text);
 		
