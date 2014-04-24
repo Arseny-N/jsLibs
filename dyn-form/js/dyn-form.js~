@@ -92,7 +92,7 @@ var FORM = {
 						type : 'integer',
 						passwd : true,
 						set : 'weight',
-						text : 	'Ввебите пожалуйста ваш вес (кг)',
+						text : 	'Введите пожалуйста ваш вес (кг)',
 						range : [0, 200],
 						errMsg : 'Вес не может быть больше 200кг или меньше 0кг.', 
 					},
@@ -115,7 +115,7 @@ var FORM = {
 						type : 'integer',
 						
 						set : 'height',
-						text : 	'Ввебите пожалуйста ваш рост (см)',
+						text : 	'Введите пожалуйста ваш рост (см)',
 						range : [0, 300],
 						errMsg : 'Рост не может быть больше 300см или меньше 0см.',					 
 					},
@@ -179,7 +179,7 @@ var FORM = {
 			]
 		},
 		{ 
-			text : 	'У вас есть возможность узмерить температуру вашего тела ?',
+			text : 	'У вас есть возможность измерить температуру вашего тела ?',
 			answers : [
 				{	
 					classes : 'success',
@@ -290,19 +290,22 @@ var DynForm = function(form) {
 			var span = self.e.question.find('span#timer')
 			var begin = self.button('начать', {empty:true}).slideDown();
 			var again = self.button('заново');
+			var stop = self.button('стоп').hide();
 			var proceed = self.button('дальше');
 			var intervalID, interval = 10, elapsed = 0;
 
-			begin.mousedown(function(){
+			begin.click(function(){
 				intervalID = window.setInterval(function(){
 					elapsed += interval;
 					span.html(elapsed/10);
 				},interval);
-			});
-			begin.mouseup(function(){
-				window.clearInterval(intervalID);
-				
 				begin.hide();
+				stop.show();
+			});
+			
+			stop.click(function(){
+				window.clearInterval(intervalID);			
+
 				proceed.show();
 				again.show();
 			});
@@ -369,7 +372,7 @@ DynForm.prototype.input = function(text,cb, pass, input) {
 		cb = funcs[cb];
 	
 	this.e.inputs.root.slideDown();
-	this.buttons.hide();
+	this.e.buttons.hide();
 	if (text)
 		this.e.inputs.text.html(text);
 		
